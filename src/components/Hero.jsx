@@ -5,6 +5,8 @@ import { GiMailShirt } from "react-icons/gi";
 import { GoLink } from "react-icons/go";
 import { LuDownload } from "react-icons/lu";
 import { MdOutlineEmail, MdOutlineWorkOutline } from "react-icons/md";
+import Btn from "./Btn";
+import { PiDownloadSimpleBold } from "react-icons/pi";
 
 const Hero = () => {
   const info = [
@@ -107,13 +109,12 @@ const Hero = () => {
                   ))}
                 </div>
                 {/* CV button */}
-                <button className="bg-primary rounded-full flex items-center justify-center gap-x-4 px-8 py-4 duration-300 hover:cursor-pointer hover:bg-primary/80 active:bg-primary active:scale-95 ">
-                  <span className="font-primary font-normal text-[20px] text-primary-bg leading-[24px] ">
-                    Download CV
-                  </span>
-                  <LuDownload className="text-primary-bg w-6 h-6 " />
-                </button>
               </div>
+              <Btn
+                text={"Download CV"}
+                icon={PiDownloadSimpleBold}
+                color={"bg-primary hover:bg-primary/90 active:bg-primary"}
+              />
             </div>
 
             {/* Middle-side */}

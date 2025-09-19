@@ -1,5 +1,6 @@
 import React from "react";
 import { LuMouse } from "react-icons/lu";
+import ScrollMouse from "./Scroll";
 
 const About = () => {
   return (
@@ -7,10 +8,8 @@ const About = () => {
       <div className="absolute inset-0 bg-[url('/image/about_bg.png')] bg-no-repeat bg-cover bg-center opacity-10 "></div>
       <div className="container mx-auto py-[128px] relative z-10">
         <div className="wrapper">
-          <div className="flex justify-center items-center text-brand-1">
-            <LuMouse className="w-8 h-11 " />
-          </div>
-          <div className="flex justify-between items-center pt-[134px] ">
+          <ScrollMouse />
+          <div className="flex justify-between items-center gap-10 pt-[134px] ">
             {/* Left side-about description */}
             <div className="flex flex-col gap-16  ">
               {/* Head */}
