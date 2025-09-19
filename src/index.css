@@ -33,3 +33,9 @@
 .pera-text {
   @apply font-second font-normal text-primary;
 }
+.tag-style {
+  @apply font-second font-normal text-sm text-brand-2 leading-[18px];
+}
+.intro-text {
+  @apply font-primary font-normal text-primary text-[64px] leading-[72px];
+}
