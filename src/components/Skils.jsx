@@ -2,9 +2,8 @@ import React from "react";
 import ScrollMouse from "./Scroll";
 import { FiMonitor } from "react-icons/fi";
 import { LuSmartphone } from "react-icons/lu";
-import TechSkill from "./TechSkill";
-import { RiHtml5Line } from "react-icons/ri";
 import SectionHead from "./SectionHead";
+import { RiHtml5Line } from "react-icons/ri";
 import { FaCss3, FaReact } from "react-icons/fa";
 import { SiNodedotjs } from "react-icons/si";
 
@@ -21,6 +20,46 @@ const Skils = () => {
       text: "iOS.Android",
     },
   ];
+
+  const techSkill = [
+    {
+      id: 1,
+      icon: (
+        <RiHtml5Line className="w-16 h-16 text-primary duration-300 hover:scale-110" />
+      ),
+      text: "html",
+      bgColor: "#E54F26",
+      textColor: "#E54F26",
+    },
+    {
+      id: 2,
+      icon: (
+        <FaCss3 className="w-16 h-16 text-primary duration-300 hover:scale-110" />
+      ),
+      text: "css",
+      bgColor: "#0C73B8",
+      textColor: "#0C73B8",
+    },
+    {
+      id: 3,
+      icon: (
+        <SiNodedotjs className="w-16 h-16 text-primary duration-300 hover:scale-110" />
+      ),
+      text: "js",
+      bgColor: "#E7A020",
+      textColor: "#E7A020",
+    },
+    {
+      id: 4,
+      icon: (
+        <FaReact className="w-16 h-16 text-primary duration-300 hover:scale-110" />
+      ),
+      text: "react",
+      bgColor: "#28A9E0",
+      textColor: "#28A9E0",
+    },
+  ];
+
   return (
     <section className="bg-primary-bg relative">
       <div className="absolute inset-0 bg-[url('/image/skill_bg.png')] bg-no-repeat bg-cover bg-center opacity-10"></div>
@@ -50,47 +89,26 @@ const Skils = () => {
             ))}
           </div>
           {/* Skill-technology */}
-          <div className="flex justify-center items-center gap-[128px] pt-[90px]">
-            <div className="flex flex-col items-center justify-center gap-6 ">
-              <div className="p-[40px] rounded-full bg-[#E54F26] ">
-                <RiHtml5Line className="w-16 h-16 text-primary" />
-              </div>
-              <p
-                className={`font-second font-medium text-[32px] leading-[42px] text-[#E54F26] uppercase`}
+          <div className="flex justify-center items-center gap-[128px] pt-[90px] ">
+            {techSkill.map((item, index) => (
+              <div
+                key={index}
+                className="flex flex-col items-center justify-center gap-6 "
               >
-                Html
-              </p>
-            </div>
-            <div className="flex flex-col items-center justify-center gap-6 ">
-              <div className="p-[40px] rounded-full bg-[#E54F26] ">
-                <FaCss3 className="w-16 h-16 text-primary" />
+                <div
+                  className={`p-[40px]  rounded-full`}
+                  style={{ backgroundColor: item.bgColor }}
+                >
+                  {item.icon}
+                </div>
+                <p
+                  className={`font-second font-medium text-[32px] leading-[42px] uppercase`}
+                  style={{ color: item.textColor }}
+                >
+                  {item.text}
+                </p>
               </div>
-              <p
-                className={`font-second font-medium text-[32px] leading-[42px] text-[#E54F26] uppercase`}
-              >
-                Css
-              </p>
-            </div>
-            <div className="flex flex-col items-center justify-center gap-6 ">
-              <div className="p-[40px] rounded-full bg-[#E54F26] ">
-                <SiNodedotjs className="w-16 h-16 text-primary" />
-              </div>
-              <p
-                className={`font-second font-medium text-[32px] leading-[42px] text-[#E54F26] uppercase`}
-              >
-                js
-              </p>
-            </div>
-            <div className="flex flex-col items-center justify-center gap-6 ">
-              <div className="p-[40px] rounded-full bg-[#E54F26] ">
-                <FaReact className="w-16 h-16 text-primary" />
-              </div>
-              <p
-                className={`font-second font-medium text-[32px] leading-[42px] text-[#E54F26] uppercase`}
-              >
-                react
-              </p>
-            </div>
+            ))}
           </div>
         </div>
       </div>
