@@ -5,9 +5,12 @@ import { FaGithub } from "react-icons/fa";
 
 const Header = () => {
   return (
-    <header className="bg-primary-bg ">
+    <header className="fixed top-6 left-0 w-full z-50 ">
       <nav className="container mx-auto px-[24px] md:px-0 ">
-        <div className="wrapper flex items-center justify-between min-h-[170px] border-b-1 border-white/10 ">
+        <div
+          className="wrapper flex items-center justify-between min-h-[90px] px-[10px] md:px-[28px] 
+          bg-black/30 backdrop-blur-lg  rounded-2xl shadow-2xl"
+        >
           <div>
             <button
               to="./Hero.jsx"

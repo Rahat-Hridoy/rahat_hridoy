@@ -24,36 +24,28 @@ const Skils = () => {
   const techSkill = [
     {
       id: 1,
-      icon: (
-        <RiHtml5Line className="w-16 h-16 text-primary duration-300 hover:scale-110" />
-      ),
+      icon: <RiHtml5Line className="skill-icon" />,
       text: "html",
       bgColor: "#E54F26",
       textColor: "#E54F26",
     },
     {
       id: 2,
-      icon: (
-        <FaCss3 className="w-16 h-16 text-primary duration-300 hover:scale-110" />
-      ),
+      icon: <FaCss3 className="skill-icon" />,
       text: "css",
       bgColor: "#0C73B8",
       textColor: "#0C73B8",
     },
     {
       id: 3,
-      icon: (
-        <SiNodedotjs className="w-16 h-16 text-primary duration-300 hover:scale-110" />
-      ),
+      icon: <SiNodedotjs className="skill-icon" />,
       text: "js",
       bgColor: "#E7A020",
       textColor: "#E7A020",
     },
     {
       id: 4,
-      icon: (
-        <FaReact className="w-16 h-16 text-primary duration-300 hover:scale-110" />
-      ),
+      icon: <FaReact className="skill-icon" />,
       text: "react",
       bgColor: "#28A9E0",
       textColor: "#28A9E0",

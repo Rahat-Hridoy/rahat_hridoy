@@ -7,6 +7,8 @@ import { LuDownload } from "react-icons/lu";
 import { MdOutlineEmail, MdOutlineWorkOutline } from "react-icons/md";
 import Btn from "./Btn";
 import { PiDownloadSimpleBold } from "react-icons/pi";
+import { TypingAnimation } from "./ui/typing-animation";
+import ShinyText from "./ShinyText";
 
 const Hero = () => {
   const info = [
@@ -36,26 +38,35 @@ const Hero = () => {
 
   const exp = [
     {
+      id: 1,
       digit: 4,
       title: "Programming Language",
     },
     {
+      id: 2,
       digit: 6,
       title: "Development Tools",
     },
     {
+      id: 3,
       digit: 8,
       title: "Year of experiance",
     },
   ];
 
   return (
-    <section className="bg-primary-bg ">
-      <div className="container mx-auto">
-        <div className="wrapper pb-[128px] ">
+    <section className="bg-second-bg  relative shadow-2xl ">
+      <div className="absolute inset-0  bg-[url('/image/framer_bg.png')] bg-no-repeat bg-cover  opacity-15 "></div>
+      <div className="container mx-auto relative z-10 pt-[90px]  ">
+        <div className="wrapper pb-[128px]  ">
           <div>
-            <h1 className="font-primary font-normal text-brand-2 text-[117px] text-center leading-[134px] py-[64px]">
-              Developer
+            <h1 className="font-primary font-normal  text-[117px] text-center leading-[134px] py-[64px]">
+              <ShinyText
+                text="Developer"
+                disabled={false}
+                speed={6}
+                className="text-brand-2/70 "
+              />
             </h1>
           </div>
           <div className=" flex justify-between items-center">
@@ -101,7 +112,7 @@ const Hero = () => {
                 <div className="flex items-center justify-start gap-4 pb-8  ">
                   {skills.map((skill) => (
                     <span
-                      key={skill}
+                      key={skill.id}
                       className="max-w-[60px] pera-text text-sm leading-[18px] px-2 bg-brand-1 rounded-full "
                     >
                       {skill}
@@ -121,6 +132,7 @@ const Hero = () => {
             <div className="flex flex-col  gap-y-[32px] ">
               <div>
                 <p className="tag-style"> {"<h1>"} </p>
+
                 <h1 className="intro-text pl-6">
                   {" "}
                   Hey <br /> I'm <span className="text-brand-1">
