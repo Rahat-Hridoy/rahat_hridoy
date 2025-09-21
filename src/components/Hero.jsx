@@ -1,13 +1,9 @@
 import React from "react";
 import { CiLocationOn } from "react-icons/ci";
-import { FaLink } from "react-icons/fa";
-import { GiMailShirt } from "react-icons/gi";
 import { GoLink } from "react-icons/go";
-import { LuDownload } from "react-icons/lu";
 import { MdOutlineEmail, MdOutlineWorkOutline } from "react-icons/md";
 import Btn from "./Btn";
 import { PiDownloadSimpleBold } from "react-icons/pi";
-import { TypingAnimation } from "./ui/typing-animation";
 import ShinyText from "./ShinyText";
 
 const Hero = () => {
@@ -65,12 +61,12 @@ const Hero = () => {
                 text="Developer"
                 disabled={false}
                 speed={6}
-                className="text-brand-2/70 "
+                className="text-brand-2/60 "
               />
             </h1>
           </div>
-          <div className=" flex justify-between items-center">
-            {/* left-side */}
+          <div className="flex justify-between items-center flex-col lg:flex-row px-[25px] ">
+            {/* left-side: information  */}
             <div className="w-[320px] h-[520px] border-4 border-primary  px-[22px] py-[36px] rounded-tl-[160px] rounded-br-[160px] relative">
               <div>
                 {/* profile */}
@@ -128,50 +124,52 @@ const Hero = () => {
               />
             </div>
 
-            {/* Middle-side */}
-            <div className="flex flex-col  gap-y-[32px] ">
-              <div>
-                <p className="tag-style"> {"<h1>"} </p>
+            <div className="flex items-center justify-center  ">
+              {/* Middle-side */}
+              <div className="flex flex-col  gap-y-[32px] px-[50px] ">
+                <div>
+                  <p className="tag-style"> {"<h1>"} </p>
 
-                <h1 className="intro-text pl-6">
-                  {" "}
-                  Hey <br /> I'm <span className="text-brand-1">
-                    Rahat
-                  </span>{" "}
-                  <br />
-                  Full-Stack Devoloper{" "}
-                </h1>
-                <p className="tag-style"> {"</h1>"} </p>
-              </div>
-              <div>
-                <p className="tag-style"> {"<p>"} </p>
-                <p className="max-w-[650px] pera-text text-[16px] leading-[20px] pl-6 ">
-                  I help business grow by crafting amazing web experiences. If
-                  you’re looking for a developer that likes to get stuff done,
-                </p>
-                <p className="tag-style"> {"</p>"} </p>
-              </div>
-              <div>
-                <button className="flex items-center justify-start gap-x-[16px] font-second font-medium text-brand-1 text-[32px] leading-[42px] pl-6 hover:cursor-pointer hover:underline">
-                  <span>Let’s Talk</span> <MdOutlineEmail />
-                </button>
-              </div>
-            </div>
-            {/* right side-card */}
-            <div className="bg-second-bg rounded-[80px] px-[32px] py-[48px]">
-              {exp.map((item) => (
-                <div
-                  key={item}
-                  className=" flex justify-center items-center gap-x-4 py-[16px]  "
-                >
-                  <p className="font-second font-medium text-brand-1 text-[48px] leading-[62px] ">
-                    {item.digit}
-                  </p>
-                  <p className="pera-text text-[16px] leading-[20px] max-w-[106px] ">
-                    {item.title}
-                  </p>
+                  <h1 className="intro-text pl-6">
+                    {" "}
+                    Hey <br /> I'm <span className="text-brand-1">
+                      Rahat
+                    </span>{" "}
+                    <br />
+                    Full-Stack Devoloper{" "}
+                  </h1>
+                  <p className="tag-style"> {"</h1>"} </p>
                 </div>
-              ))}
+                <div>
+                  <p className="tag-style"> {"<p>"} </p>
+                  <p className="max-w-[650px] pera-text text-[16px] leading-[20px] pl-6 ">
+                    I help business grow by crafting amazing web experiences. If
+                    you’re looking for a developer that likes to get stuff done,
+                  </p>
+                  <p className="tag-style"> {"</p>"} </p>
+                </div>
+                <div>
+                  <button className="flex items-center justify-start gap-x-[16px] font-second font-medium text-brand-1 text-[32px] leading-[42px] pl-6 hover:cursor-pointer hover:underline">
+                    <span>Let’s Talk</span> <MdOutlineEmail />
+                  </button>
+                </div>
+              </div>
+              {/* right side-card */}
+              <div className="bg-second-bg rounded-[80px] px-[32px] py-[48px]">
+                {exp.map((item) => (
+                  <div
+                    key={item}
+                    className=" flex justify-center items-center gap-x-4 py-[16px]  "
+                  >
+                    <p className="font-second font-medium text-brand-1 text-[48px] leading-[62px] ">
+                      {item.digit}
+                    </p>
+                    <p className="pera-text text-[16px] leading-[20px] max-w-[106px] ">
+                      {item.title}
+                    </p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
