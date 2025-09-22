@@ -6,18 +6,20 @@ const About = () => {
   return (
     <section className="bg-second-bg relative ">
       <div className="absolute inset-0 bg-[url('/image/about_bg.png')] bg-no-repeat bg-cover bg-center opacity-10 "></div>
-      <div className="container mx-auto py-[128px] relative z-10">
+      <div className="container mx-auto py-[64px] lg:py-[128px] px-[35px] lg:px-0 relative z-10">
         <div className="wrapper">
-          <ScrollMouse />
-          <div className="flex justify-between items-center gap-10 pt-[134px] ">
+          <div className="hidden lg:block ">
+            <ScrollMouse />
+          </div>
+          <div className="flex flex-col xl:flex-row justify-between items-center gap-10 pt-0 lg:pt-[134px] ">
             {/* Left side-about description */}
             <div className="flex flex-col gap-16  ">
               {/* Head */}
-              <h1 className="max-w-[367px] font-primary font-normal text-primary text-[64px] leading-[72px] px-[40px] py-[16px] border-4 border-brand-1 rounded-tl-[50px] rounded-br-[50px] bg-primary-bg  ">
+              <h1 className="max-w-[367px] font-primary font-normal text-primary text-[32px] md:text-[64px] leading-[36px] md:leading-[72px] px-[40px] py-[16px] border-4 border-brand-1 rounded-tl-[50px] rounded-br-[50px] bg-primary-bg mx-auto md:mx-0 ">
                 About Me
               </h1>
               {/* Description */}
-              <div className="px-[40px] py-[24px] bg-primary-bg rounded-3xl">
+              <div className="px-[24px] md:px-[40px] py-[58px] bg-primary-bg rounded-3xl">
                 <p className="tag-style"> {"<p>"} </p>
                 <h4 className="font-second font-medium text-brand-1 text-[32px] leading-[42px] pt-[16px] ">
                   Hello !
@@ -46,7 +48,7 @@ const About = () => {
               <img
                 src="/image/about_me.jpg"
                 alt="image"
-                className="w-[462px] h-[556px] rounded-3xl object-cover object-center overflow-hidden  "
+                className="w-[272px] md:w-[462px]  rounded-3xl object-cover object-center overflow-hidden  "
               />
             </div>
           </div>

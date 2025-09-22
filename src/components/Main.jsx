@@ -9,7 +9,7 @@ export const Main = () => {
   return (
     <main>
       <Hero />
-      {/* <About /> */}
+      <About />
       {/* <Skils /> */}
       {/* <Project /> */}
       {/* <Contact /> */}
