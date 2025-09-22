@@ -60,7 +60,7 @@
   @apply font-second font-normal text-sm text-brand-2 leading-[18px];
 }
 .intro-text {
-  @apply font-primary font-normal text-primary text-[64px] leading-[72px];
+  @apply font-primary font-normal text-primary text-[32px] leading-[36px] md:text-[64px] md:leading-[72px];
 }
 .skill-icon {
   @apply w-16 h-16 text-primary duration-300 hover:scale-110;

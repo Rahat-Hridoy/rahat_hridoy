@@ -52,10 +52,10 @@ const Hero = () => {
 
   return (
     <section className="bg-second-bg  relative shadow-2xl ">
-      <div className="absolute inset-0  bg-[url('/image/framer_bg.png')] bg-no-repeat bg-cover  opacity-15 "></div>
-      <div className="container mx-auto relative z-10 pt-[90px]  ">
-        <div className="wrapper pb-[128px]  ">
-          <div>
+      <div className="absolute inset-0  bg-[url('/image/framer_bg.png')] bg-no-repeat bg-cover bg-center opacity-15 "></div>
+      <div className="container mx-auto relative z-10  px-[35px] lg:px-0  ">
+        <div className="wrapper pb-[64px] lg:pb-[128px] pt-[128px] md:pt-[150px] lg:pt-[90px] ">
+          <div className="hidden lg:block ">
             <h1 className="font-primary font-normal  text-[117px] text-center leading-[134px] py-[64px]">
               <ShinyText
                 text="Developer"
@@ -65,9 +65,9 @@ const Hero = () => {
               />
             </h1>
           </div>
-          <div className="grid grid-cols-1 space-y-16 justify-items-center place-items-center ">
+          <div className="grid grid-cols-1 space-y-16 space-x-8 lg:grid-cols-[auto_1fr] xl:grid-cols-[1fr_auto_1fr]   justify-items-center place-items-center">
             {/* left-side: information  */}
-            <div className="w-[320px] h-[520px] border-4 border-primary  px-[22px] py-[36px] rounded-tl-[160px] rounded-br-[160px] relative">
+            <div className=" lg:col-span-2 xl:col-span-1 w-[320px] h-[520px] border-4 border-primary  px-[22px] py-[36px] rounded-tl-[160px] rounded-br-[160px] relative">
               <div>
                 {/* profile */}
                 <div>
@@ -124,7 +124,7 @@ const Hero = () => {
               />
             </div>
             {/* Middle-side : intro */}
-            <div className="flex flex-col  gap-y-[32px]  ">
+            <div className=" flex flex-col  gap-y-[32px]  ">
               <div>
                 <p className="tag-style"> {"<h1>"} </p>
                 <h1 className="intro-text pl-6">
@@ -137,7 +137,6 @@ const Hero = () => {
                 </h1>
                 <p className="tag-style"> {"</h1>"} </p>
               </div>
-
               <div>
                 <p className="tag-style"> {"<p>"} </p>
                 <p className="max-w-[650px] pera-text text-[16px] leading-[20px] pl-6 ">
@@ -153,11 +152,11 @@ const Hero = () => {
               </div>
             </div>
             {/* right side-card : experiance */}
-            <div className="max-w-[215px] bg-second-bg rounded-[80px] px-[32px] py-[48px]">
+            <div className="max-w-[215px] bg-primary-bg rounded-[80px] px-[32px] py-[48px]  ">
               {exp.map((item) => (
                 <div
-                  key={item}
-                  className=" flex justify-center items-center gap-x-4 py-[16px]  "
+                  key={item.id}
+                  className=" flex justify-center items-center gap-x-4 py-[16px] "
                 >
                   <p className="font-second font-medium text-brand-1 text-[48px] leading-[62px] ">
                     {item.digit}

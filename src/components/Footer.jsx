@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <section className="bg-second-bg border-t-1 border-primary/20 ">
       <div className="container mx-auto py-[16px]">
-        <div className="grid grid-cols-1 md:grid-cols-2 justify-items-center items-center lg:justify-items-normal lg:grid-flow-col  space-y-6 lg:space-y-0 space-x-[48px] xl:grid-cols-[auto_1fr_1fr_auto] ">
+        <div className="grid grid-cols-1 space-x-[48px] space-y-6  justify-items-center items-center lg:justify-items-normal md:grid-cols-2 lg:grid-flow-col lg:space-y-0 xl:grid-cols-[auto_1fr_1fr_auto] ">
           {/* license */}
           <div className="max-w-[300px] order-2 lg:order-1   ">
             <p className=" font-primary font-light text-primary text-[16px] leading-[18px] ">
