@@ -7,12 +7,12 @@ import Contact from "./Contact";
 
 export const Main = () => {
   return (
-    <>
-      <Hero />
+    <main className="h-screen">
+      {/* <Hero />
       <About />
       <Skils />
       <Project />
-      <Contact />
-    </>
+      <Contact /> */}
+    </main>
   );
 };
