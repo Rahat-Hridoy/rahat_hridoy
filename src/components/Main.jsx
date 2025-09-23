@@ -12,7 +12,7 @@ export const Main = () => {
       <About />
       <Skils />
       {/* <Project /> */}
-      {/* <Contact /> */}
+      <Contact />
     </main>
   );
 };

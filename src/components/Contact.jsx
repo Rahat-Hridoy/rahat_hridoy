@@ -20,7 +20,7 @@ const Contact = () => {
                 Send me a message
               </h3>
             </div>
-            <form className="max-w-[1120px] mx-auto pt-16">
+            <form className="max-w-[1120px] mx-auto pt-16 px-[35px] lg:px-0 ">
               <div className="w-full flex justify-center items-center gap-x-[128px]  ">
                 {/* input name */}
                 <div className="w-[496px] flex flex-col gap-[24px] ">
