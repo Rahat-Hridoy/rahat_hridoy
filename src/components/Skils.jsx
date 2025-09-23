@@ -64,7 +64,7 @@ const Skils = () => {
             text={"I am striving to never stop learning and improving"}
           />
           {/* skill-cards */}
-          <div className="flex justify-center items-center gap-[152px] ">
+          <div className="flex flex-col md:flex-row  justify-center items-center gap-[32px]  lg:gap-[152px] ">
             {cardItem.map((item) => (
               <div
                 key={item}
@@ -81,14 +81,14 @@ const Skils = () => {
             ))}
           </div>
           {/* Skill-technology */}
-          <div className="flex justify-center items-center gap-[128px] pt-[90px] ">
+          <div className="max-w-[960px] mx-auto grid grid-cols-2 lg:grid-cols-4 gap-x-[64px] md:gap-x-[96px] lg:gap-x-[128px] gap-y-[32px] pt-[90px] ">
             {techSkill.map((item, index) => (
               <div
                 key={index}
                 className="flex flex-col items-center justify-center gap-6 "
               >
                 <div
-                  className={`p-[40px]  rounded-full`}
+                  className={` p-6 md:p-[40px]  rounded-full`}
                   style={{ backgroundColor: item.bgColor }}
                 >
                   {item.icon}
