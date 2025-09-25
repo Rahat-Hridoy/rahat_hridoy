@@ -1,9 +1,9 @@
 import React from "react";
 import Hero from "./Hero";
 import About from "./About";
-import Project from "./Project";
 import Skils from "./Skils";
 import Contact from "./Contact";
+import Project from "./project/Project";
 
 export const Main = () => {
   return (
@@ -11,7 +11,7 @@ export const Main = () => {
       <Hero />
       <About />
       <Skils />
-      {/* <Project /> */}
+      <Project />
       <Contact />
     </main>
   );

@@ -2,7 +2,7 @@ import React from "react";
 
 const SectionHead = ({ title, text }) => {
   return (
-    <div className="py-16 flex flex-col gap-y-4 ">
+    <div className="pb-16 flex flex-col gap-y-4 ">
       <h2 className="font-primary font-normal text-brand-1 text-[64px] leading-[72px] text-center ">
         {title}
       </h2>

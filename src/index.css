@@ -14,6 +14,18 @@
       background-position: -200% 0;
     }
   }
+  @keyframes scroll {
+    0% {
+      transform: translateY(0%);
+    }
+    100% {
+      transform: translateY(-80%);
+    }
+  }
+}
+
+.project-art:hover .animate-scroll {
+  animation: scroll 3s linear forwards;
 }
 
 .animate-shine {
