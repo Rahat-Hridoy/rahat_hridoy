@@ -26,14 +26,14 @@ const Project = () => {
   ];
   return (
     <section className="bg-second-bg ">
-      <div className="container mx-auto py-[128px]">
+      <div className="container mx-auto px-[35px] lg:px-0 py-[64px] lg:py-[128px]">
         <div className="wrapper">
           <SectionHead
             title={"Project"}
             text={"I had the pleasure of working with these awesome projects"}
           />
         </div>
-        <div className="grid grid-cols-3 gap-6 items-stretch  ">
+        <div className="grid grid-cols-1  lg:grid-cols-3 justify-items-center gap-6   ">
           {cardContent.map((item) => (
             <ProjectCard cardContent={item} />
           ))}

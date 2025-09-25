@@ -1,12 +1,13 @@
 import React from "react";
-import { FiExternalLink, FiLink } from "react-icons/fi";
+import { FaCodeBranch } from "react-icons/fa";
+import { FiExternalLink } from "react-icons/fi";
 
 const ProjectCard = ({ cardContent }) => {
   const btnItem = [
     {
       id: 1,
-      text: "Git-hub Repository",
-      icon: FiLink,
+      text: "Git-Hub",
+      icon: FaCodeBranch,
     },
     {
       id: 2,
@@ -17,11 +18,11 @@ const ProjectCard = ({ cardContent }) => {
   return (
     <>
       {/* Card */}
-      <div className="rounded-2xl border border-brand-2/50 project-art  ">
+      <div className="max-w-[490px] rounded-2xl border border-brand-2/50 project-art  ">
         <div className="w-full h-[250px] overflow-hidden rounded-t-2xl  ">
           <img src={cardContent.img} alt="image" className="animate-scroll " />
         </div>
-        <div className="p-[20px]  flex flex-col justify-stretch">
+        <div className="p-[20px]  flex flex-col justify-stretch ">
           <div>
             <div>
               <h4 className="font-second font-medium text-brand-1 text-[24px] leading-[32px] pb-[8px] ">
@@ -51,9 +52,9 @@ const ProjectCard = ({ cardContent }) => {
               return (
                 <button
                   key={item.id}
-                  className="flex justify-between items-center gap-x-2 px-4 py-3 border-3 border-primary/20 rounded-full bg-primary-bg duration-300  hover:cursor-pointer hover:bg-second-bg active:bg-primary-bg active:scale-95  "
+                  className="flex justify-between items-center gap-3 px-3 xl:px-4 py-2 xl:py-3 border-3 border-primary/20 rounded-full bg-primary-bg duration-300  hover:cursor-pointer hover:bg-second-bg active:bg-primary-bg active:scale-95  "
                 >
-                  <span className="font-second font-medium text-[20px] leading-[20px] text-primary ">
+                  <span className="font-second font-medium text-[16px] leading-[20px] text-primary ">
                     {item.text}
                   </span>
                   <Icon className="text-primary w-4 h-4 " />
