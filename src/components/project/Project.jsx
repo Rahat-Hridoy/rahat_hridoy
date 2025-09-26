@@ -7,10 +7,10 @@ const Project = () => {
   const cardContent = [
     {
       id: 1,
-      img: "/image/plumber-point-website.png",
-      title: "Service Website",
-      text: " A front-end developer's minimalist portfolio. Built with HTML, Tailwind CSS, and JavaScript. Features responsive design, and a clean code . Streamlined for showcasing projects and professional outreach. ",
-      projectTech: ["Html", "css", "js"],
+      img: "/image/portfolio_website.png",
+      title: "Portfolio Website",
+      text: " A front-end developer's minimalist portfolio. Built with React JS, Tailwind CSS, Framer Motion and JavaScript. Features responsive design, and a clean code . Streamlined for showcasing projects and professional outreach. ",
+      projectTech: ["React JS", "CSS", "Taildwind", "Framer Motion"],
       github: "https://github.com/Rahat-Hridoy/rahat_hridoy",
       liveurl: "https://rahat-hridoy.vercel.app/",
     },
