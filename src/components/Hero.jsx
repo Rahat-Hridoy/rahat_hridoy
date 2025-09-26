@@ -5,6 +5,7 @@ import { MdOutlineEmail, MdOutlineWorkOutline } from "react-icons/md";
 import Btn from "./Btn";
 import { PiDownloadSimpleBold } from "react-icons/pi";
 import ShinyText from "./ShinyText";
+import { FiPhone } from "react-icons/fi";
 
 const Hero = () => {
   const info = [
@@ -25,8 +26,8 @@ const Hero = () => {
     },
     {
       id: 4,
-      icon: <GoLink />,
-      text: " rahathridoy.com",
+      icon: <FiPhone />,
+      text: "+880 1917 579030",
     },
   ];
 
@@ -51,7 +52,7 @@ const Hero = () => {
   ];
 
   return (
-    <section className="bg-second-bg  relative shadow-2xl ">
+    <section className="bg-second-bg  relative shadow-2xl " id="home">
       <div className="absolute inset-0 bg-[url('/image/framer_bg.png')] bg-no-repeat bg-cover bg-center opacity-15 "></div>
       <div className="container mx-auto relative z-10  px-[35px] lg:px-0 ">
         <div className="wrapper pb-[64px] lg:pb-[128px] pt-[128px] md:pt-[150px] lg:pt-[90px] ">
@@ -60,8 +61,8 @@ const Hero = () => {
               <ShinyText
                 text="Developer"
                 disabled={false}
-                speed={2}
-                className="  "
+                speed={5}
+                className="text-brand-2/60"
               />
             </h1>
           </div>
@@ -117,11 +118,16 @@ const Hero = () => {
                 </div>
                 {/* CV button */}
               </div>
-              <Btn
-                text={"Download CV"}
-                icon={PiDownloadSimpleBold}
-                color={"bg-primary hover:bg-primary/90 active:bg-primary"}
-              />
+              <a
+                href="/document/MD-RAHATUL-ISLAM-resume-post-web-designer.pdf"
+                target="_blank"
+              >
+                <Btn
+                  text={"Download CV"}
+                  icon={PiDownloadSimpleBold}
+                  color={"bg-primary hover:bg-primary/90 active:bg-primary"}
+                />
+              </a>
             </div>
             {/* Middle-side : intro */}
             <div className=" flex flex-col  gap-y-[32px]  ">
@@ -146,9 +152,11 @@ const Hero = () => {
                 <p className="tag-style"> {"</p>"} </p>
               </div>
               <div>
-                <button className="flex items-center justify-start gap-x-[16px] font-second font-medium text-brand-1 text-[32px] leading-[42px] pl-6 hover:cursor-pointer hover:underline">
-                  <span>Let’s Talk</span> <MdOutlineEmail />
-                </button>
+                <a href="#contact">
+                  <button className="flex items-center justify-start gap-x-[16px] font-second font-medium text-brand-1 text-[32px] leading-[42px] pl-6 hover:cursor-pointer hover:underline">
+                    <span>Let’s Talk</span> <MdOutlineEmail />
+                  </button>
+                </a>
               </div>
             </div>
             {/* right side-card : experiance */}

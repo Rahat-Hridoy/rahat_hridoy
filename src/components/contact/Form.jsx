@@ -10,31 +10,31 @@ const Form = () => {
 
   const sendEmail = (e) => {
     e.preventDefault();
-
-    emailjs
-      .sendForm("service_bxx40xl", "template_gsfkvee", form.current, {
-        publicKey: "L4UvlNzkQ1WOeebJY",
-      })
-      .then(
-        () => {
-          console.log("SUCCESS!");
-          toast.success("Message successfully sent!", {
-            position: "top-center",
-            autoClose: 3000,
-            hideProgressBar: false,
-            closeOnClick: false,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "dark",
-            //   transition: Bounce,
-          });
-        },
-        (error) => {
-          console.log("FAILED...", error.text);
-          toast.error("Failed !");
-        }
-      );
+    console.log(e.target.value),
+      emailjs
+        .sendForm("service_bxx40xl", "template_gsfkvee", form.current, {
+          publicKey: "L4UvlNzkQ1WOeebJY",
+        })
+        .then(
+          () => {
+            console.log("SUCCESS!");
+            toast.success("Message successfully sent!", {
+              position: "top-center",
+              autoClose: 3000,
+              hideProgressBar: false,
+              closeOnClick: false,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "dark",
+              //   transition: Bounce,
+            });
+          },
+          (error) => {
+            console.log("FAILED...", error.text);
+            toast.error("Failed !");
+          }
+        );
   };
 
   return (

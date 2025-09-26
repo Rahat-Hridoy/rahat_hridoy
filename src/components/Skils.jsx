@@ -11,13 +11,13 @@ const Skils = () => {
   const cardItem = [
     {
       icon: <FiMonitor className="w-8 h-8 " />,
-      title: "Web Developement",
+      title: "Custom Web Developer",
       text: "html.css.js.react",
     },
     {
-      icon: <LuSmartphone className="w-8 h-8" />,
-      title: "App Developement",
-      text: "iOS.Android",
+      icon: <FiMonitor className="w-8 h-8" />,
+      title: " Wordpress Web Developer",
+      text: "Elementor",
     },
   ];
 

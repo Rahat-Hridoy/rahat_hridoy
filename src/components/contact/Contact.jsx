@@ -5,7 +5,7 @@ import Form from "./Form";
 
 const Contact = () => {
   return (
-    <section className="bg-second-bg ">
+    <section className="bg-second-bg " id="contact">
       <div className="container mx-auto py-16">
         <div className="wrapper">
           <ScrollMouse />

@@ -1,7 +1,7 @@
 import React from "react";
 import { CiLinkedin } from "react-icons/ci";
 import { FaGithub } from "react-icons/fa";
-import { TbBrandDiscord } from "react-icons/tb";
+import { ImReddit } from "react-icons/im";
 
 const Footer = () => {
   return (
@@ -35,17 +35,23 @@ const Footer = () => {
           <div className="order-1 md:col-span-2 lg:col-span-1 lg:order-3 ">
             <div className=" flex justify-center items-center gap-8">
               <div className="p-2 bg-brand-2 rounded-full">
-                <a href="#">
+                <a
+                  href="https://www.linkedin.com/in/rahat-hridoy"
+                  target="_blank"
+                >
                   <CiLinkedin className="w-4 h-4" />
                 </a>
               </div>
               <div className="p-2 bg-brand-2 rounded-full">
-                <a href="#">
-                  <TbBrandDiscord className="w-4 h-4" />
+                <a
+                  href="https://www.reddit.com/user/Big-Warthog2876/"
+                  target="_blank"
+                >
+                  <ImReddit className="w-4 h-4" />
                 </a>
               </div>
               <div className="p-2 bg-brand-2 rounded-full">
-                <a href="#">
+                <a href="https://github.com/Rahat-Hridoy" target="_blank">
                   <FaGithub className="w-4 h-4" />
                 </a>
               </div>

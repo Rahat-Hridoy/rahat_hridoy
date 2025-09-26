@@ -8,11 +8,13 @@ const ProjectCard = ({ cardContent }) => {
       id: 1,
       text: "Git-Hub",
       icon: FaCodeBranch,
+      path: cardContent.github,
     },
     {
       id: 2,
       text: "Live URL",
       icon: FiExternalLink,
+      path: cardContent.liveurl,
     },
   ];
   return (
@@ -52,6 +54,12 @@ const ProjectCard = ({ cardContent }) => {
             return (
               <button
                 key={item.id}
+                onClick={() => {
+                  const link = document.createElement("a");
+                  link.href = item.path;
+                  link.target = "_blank";
+                  link.click();
+                }}
                 className="flex justify-between items-center gap-3 px-3 xl:px-4 py-2 xl:py-3 border-3 border-primary/20 rounded-full bg-primary-bg duration-300  hover:cursor-pointer hover:bg-second-bg active:bg-primary-bg active:scale-95  "
               >
                 <span className="font-second font-medium text-[16px] leading-[20px] text-primary ">
