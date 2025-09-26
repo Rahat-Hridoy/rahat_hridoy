@@ -11,8 +11,8 @@ const Project = () => {
       title: "Service Website",
       text: " A front-end developer's minimalist portfolio. Built with HTML, Tailwind CSS, and JavaScript. Features responsive design, and a clean code . Streamlined for showcasing projects and professional outreach. ",
       projectTech: ["Html", "css", "js"],
-      github: "https://www.facebook.com",
-      liveurl: "https://google.com",
+      github: "https://github.com/Rahat-Hridoy/rahat_hridoy",
+      liveurl: "https://rahat-hridoy.vercel.app/",
     },
     {
       id: 2,
@@ -25,12 +25,12 @@ const Project = () => {
     },
     {
       id: 3,
-      img: "/image/plumber-point-website.png",
-      title: "Service Website",
-      text: " A front-end developer's minimalist portfolio. Built with HTML, Tailwind CSS, and JavaScript. Features responsive design, and a clean code . Streamlined for showcasing projects and professional outreach.showcasing projects and professional outreach ",
-      projectTech: ["Html", "tailwind css", "js"],
-      github: "https://www.facebook.com",
-      liveurl: "https://google.com",
+      img: "/image/LMS_Website.png",
+      title: "LMS Website",
+      text: " Built my first project with React.js and Tailwind CSS — a simple LMS website. Learned component-based development, responsive design, and state management.",
+      projectTech: ["React", "Tailwind CSS", "CSS"],
+      github: "https://github.com/Rahat-Hridoy/lesson",
+      liveurl: "https://lesson-jet.vercel.app/",
     },
   ];
   return (
