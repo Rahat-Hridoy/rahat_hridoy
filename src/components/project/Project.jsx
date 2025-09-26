@@ -6,19 +6,19 @@ import Btn from "../Btn";
 const Project = () => {
   const cardContent = [
     {
-      img: "/public/image/plumber-point-website.png",
+      img: "/image/plumber-point-website.png",
       title: "Service Website",
       text: " A front-end developer's minimalist portfolio. Built with HTML, Tailwind CSS, and JavaScript. Features responsive design, and a clean code . Streamlined for showcasing projects and professional outreach. ",
       projectTech: ["Html", "css", "js"],
     },
     {
-      img: "/public/image/plumber-point-website.png",
+      img: "/image/plumber-point-website.png",
       title: "Service Website",
       text: " A front-end developer's minimalist portfolio. Built with HTML, Tailwind CSS, and JavaScript. Features responsive design, and a clean code . Streamlined for showcasing projects and professional outreach. ",
       projectTech: ["Html", "css", "React"],
     },
     {
-      img: "/public/image/plumber-point-website.png",
+      img: "/image/plumber-point-website.png",
       title: "Service Website",
       text: " A front-end developer's minimalist portfolio. Built with HTML, Tailwind CSS, and JavaScript. Features responsive design, and a clean code . Streamlined for showcasing projects and professional outreach.showcasing projects and professional outreach ",
       projectTech: ["Html", "tailwind css", "js"],

@@ -29,7 +29,7 @@ const ProjectCard = ({ cardContent }) => {
             {" "}
             {cardContent.title}
           </h4>
-          <p className="pera-text text-[16px] leading-[24px]   ">
+          <p className="pera-text text-[16px] leading-[24px] text-justify  ">
             {" "}
             {cardContent.text}{" "}
           </p>

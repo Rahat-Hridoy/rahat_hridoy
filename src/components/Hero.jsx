@@ -52,16 +52,16 @@ const Hero = () => {
 
   return (
     <section className="bg-second-bg  relative shadow-2xl ">
-      <div className="absolute inset-0  bg-[url('/image/framer_bg.png')] bg-no-repeat bg-cover bg-center opacity-15 "></div>
-      <div className="container mx-auto relative z-10  px-[35px] lg:px-0  ">
+      <div className="absolute inset-0 bg-[url('/image/framer_bg.png')] bg-no-repeat bg-cover bg-center opacity-15 "></div>
+      <div className="container mx-auto relative z-10  px-[35px] lg:px-0 ">
         <div className="wrapper pb-[64px] lg:pb-[128px] pt-[128px] md:pt-[150px] lg:pt-[90px] ">
           <div className="hidden lg:block ">
             <h1 className="font-primary font-normal  text-[117px] text-center leading-[134px] py-[64px]">
               <ShinyText
                 text="Developer"
                 disabled={false}
-                speed={5}
-                className="text-brand-2/70  "
+                speed={2}
+                className="  "
               />
             </h1>
           </div>
