@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { FiSend } from "react-icons/fi";
 import Btn from "../Btn";
 import { useRef } from "react";
@@ -7,6 +7,13 @@ import { ToastContainer, toast } from "react-toastify";
 
 const Form = () => {
   const form = useRef();
+  const [inputValue, setinputValue] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("Submitted:", inputValue);
+    setinputValue("");
+  };
 
   const sendEmail = (e) => {
     e.preventDefault();
