@@ -7,32 +7,16 @@ const Footer = () => {
   return (
     <section className="bg-second-bg border-t-1 border-primary/20 ">
       <div className="container mx-auto py-[16px]">
-        <div className="grid grid-cols-1 space-x-[48px] space-y-6  justify-items-center items-center lg:justify-items-normal md:grid-cols-2 lg:grid-flow-col lg:space-y-0 xl:grid-cols-[auto_1fr_1fr_auto] ">
+        <div className="grid grid-cols-1 gap-y-[18px] lg:gap-y-0 lg:grid-cols-3 items-center justify-items-center ">
           {/* license */}
-          <div className="max-w-[300px] order-2 lg:order-1   ">
+          <div className="max-w-[300px] order-2 lg:order-1 ">
             <p className=" font-primary font-light text-primary text-[16px] leading-[18px] ">
               © 2025 Rahat_Hridoy. All rights reserved.
             </p>
           </div>
-          {/* Term & condision */}
-          <div className="order-3 lg:order-2 ">
-            <div className="flex justify-center items-center gap-8">
-              <a
-                href="#"
-                className="font-primary font-light text-primary text-[16px] leading-[18px] "
-              >
-                Privacy Policy
-              </a>
-              <a
-                href="#"
-                className="font-primary font-light text-primary text-[16px] leading-[18px] "
-              >
-                Terms & Conditions
-              </a>
-            </div>
-          </div>
+
           {/* Social icon */}
-          <div className="order-1 md:col-span-2 lg:col-span-1 lg:order-3 ">
+          <div className="order-1 lg:order-2">
             <div className=" flex justify-center items-center gap-8">
               <div className="p-2 bg-brand-2 rounded-full">
                 <a
@@ -58,7 +42,7 @@ const Footer = () => {
             </div>
           </div>
           {/* Credit */}
-          <div className="order-4  md:col-span-2 lg:col-span-1 lg:order-4  ">
+          <div className=" order-3 lg:order-3 ">
             <p className="font-primary font-light text-primary text-[16px] leading-[18px] ">
               Design By: <span className="text-brand-1">Rahat</span>
             </p>
