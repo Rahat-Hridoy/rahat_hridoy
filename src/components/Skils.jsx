@@ -68,7 +68,7 @@ const Skils = () => {
             {cardItem.map((item) => (
               <div
                 key={item}
-                className=" w-[288px] flex flex-col items-center justify-center gap-2 bg-brand-2 py-[16px] px-[24px] rounded-2xl "
+                className=" w-[288px] flex flex-col items-center justify-center gap-2 bg-brand-1 py-[16px] px-[24px] rounded-2xl "
               >
                 <div> {item.icon} </div>
                 <h5 className="font-second font-normal text-primary-bg text-[24px] leading-8 text-center ">

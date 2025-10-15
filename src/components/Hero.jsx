@@ -62,7 +62,7 @@ const Hero = () => {
                 text="Developer"
                 disabled={false}
                 speed={5}
-                className="text-brand-2/60"
+                className="text-brand-1/60"
               />
             </h1>
           </div>

@@ -18,7 +18,7 @@ const Footer = () => {
           {/* Social icon */}
           <div className="order-1 lg:order-2">
             <div className=" flex justify-center items-center gap-8">
-              <div className="p-2 bg-brand-2 rounded-full">
+              <div className="p-2 bg-brand-1 rounded-full">
                 <a
                   href="https://www.linkedin.com/in/rahat-hridoy"
                   target="_blank"
@@ -26,7 +26,7 @@ const Footer = () => {
                   <CiLinkedin className="w-4 h-4" />
                 </a>
               </div>
-              <div className="p-2 bg-brand-2 rounded-full">
+              <div className="p-2 bg-brand-1 rounded-full">
                 <a
                   href="https://www.reddit.com/user/Big-Warthog2876/"
                   target="_blank"
@@ -34,7 +34,7 @@ const Footer = () => {
                   <ImReddit className="w-4 h-4" />
                 </a>
               </div>
-              <div className="p-2 bg-brand-2 rounded-full">
+              <div className="p-2 bg-brand-1 rounded-full">
                 <a href="https://github.com/Rahat-Hridoy" target="_blank">
                   <FaGithub className="w-4 h-4" />
                 </a>

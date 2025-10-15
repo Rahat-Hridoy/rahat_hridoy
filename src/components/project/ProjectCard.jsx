@@ -60,7 +60,7 @@ const ProjectCard = ({ cardContent }) => {
                   link.target = "_blank";
                   link.click();
                 }}
-                className="flex justify-between items-center gap-3 px-3 xl:px-4 py-2 xl:py-3 border-3 border-primary/20 rounded-full bg-primary-bg duration-300  hover:cursor-pointer hover:bg-second-bg active:bg-primary-bg active:scale-95  "
+                className="flex justify-between items-center gap-3 px-3 xl:px-4 py-2 xl:py-3 border-3 border-primary/20 rounded-full bg-primary-bg duration-300  hover:cursor-pointer hover:bg-transparent active:bg-primary-bg active:scale-95  "
               >
                 <span className="font-second font-medium text-[16px] leading-[20px] text-primary ">
                   {item.text}
