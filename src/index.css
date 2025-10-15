@@ -50,12 +50,16 @@
   --color-primary: #fff;
   --color-brand-1: #12f7d6;
   --color-brand-2: #98faec;
-  --color-primary-bg: #292f36;
+  --color-primary-bg: #001d2f;
   --color-second-bg: #1a1e23;
 }
 
 .html {
   scroll-behavior: smooth;
+}
+
+section {
+  @apply bg-[#001e2b];
 }
 
 .nav-menu-social {

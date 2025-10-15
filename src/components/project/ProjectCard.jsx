@@ -36,7 +36,7 @@ const ProjectCard = ({ cardContent }) => {
             {cardContent.text}{" "}
           </p>
           {/* project-technology */}
-          <div className="flex justify-start items-center gap-x-3 py-3 ">
+          <div className="flex flex-wrap justify-start items-center gap-3 py-3 ">
             {cardContent.projectTech.map((item) => (
               <span
                 key={item}
