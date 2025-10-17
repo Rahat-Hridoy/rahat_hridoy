@@ -110,7 +110,7 @@ const Hero = () => {
                   {skills.map((skill) => (
                     <span
                       key={skill.id}
-                      className="max-w-[60px] pera-text text-black text-sm leading-[18px] px-2 bg-brand-1 rounded-full "
+                      className="max-w-[60px] pera-text !text-black text-sm leading-[18px] px-2 bg-brand-1 rounded-full "
                     >
                       {skill}
                     </span>

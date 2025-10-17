@@ -11,7 +11,7 @@ const About = () => {
           <div className="hidden lg:block ">
             <ScrollMouse />
           </div>
-          <div className="flex flex-col xl:flex-row justify-between items-end gap-10 pt-0  ">
+          <div className="flex flex-col xl:flex-row justify-between item-center lg:items-end gap-10 pt-0  ">
             {/* Left side-about description */}
             <div className="flex flex-col gap-16  ">
               {/* Head */}

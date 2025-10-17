@@ -48,7 +48,7 @@ const Form = () => {
     <form
       ref={form}
       onSubmit={sendEmail}
-      className="max-w-[1120px] mx-auto pt-16 px-[35px] lg:px-0 "
+      className="max-w-[1120px] mx-auto pt-16 px-[10px] lg:px-0 "
     >
       <div className="w-full flex flex-col items-start gap-y-[34px] lg:flex-row lg:justify-center lg:items-center gap-x-[128px]  ">
         {/* input name */}
