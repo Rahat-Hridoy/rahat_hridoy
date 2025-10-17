@@ -1,8 +1,8 @@
 import React from "react";
-import ScrollMouse from "./Scroll";
+import ScrollMouse from "./animation/Scroll";
 import { FiMonitor } from "react-icons/fi";
 import { LuSmartphone } from "react-icons/lu";
-import SectionHead from "./SectionHead";
+import SectionHead from "./common/SectionHead";
 import { RiHtml5Line } from "react-icons/ri";
 import { FaCss3, FaReact } from "react-icons/fa";
 import { SiNodedotjs } from "react-icons/si";

@@ -50,9 +50,10 @@
   --color-primary: #fff;
   --color-brand-1: #12f7d6;
   /* --color-brand-1: #00ed64; */
-  --color-brand-2: #98faec;
   --color-primary-bg: #001d2f;
   --color-second-bg: #1a1e23;
+  --color-sectionBG: #001e2b;
+  --color-cardBG: #00111b;
 }
 
 .html {
@@ -60,7 +61,11 @@
 }
 
 section {
-  @apply bg-[#001e2b];
+  @apply bg-sectionBG;
+}
+
+.container {
+  @apply px-[20px] lg:px-0;
 }
 
 .nav-menu-social {
@@ -73,7 +78,7 @@ section {
   @apply font-second font-normal text-primary;
 }
 .tag-style {
-  @apply font-second font-normal text-sm text-brand-2 leading-[18px];
+  @apply font-second font-normal text-sm text-brand-1 leading-[18px];
 }
 .intro-text {
   @apply font-primary font-normal text-primary text-[32px] leading-[36px] md:text-[64px] md:leading-[72px];

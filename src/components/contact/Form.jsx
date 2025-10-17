@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { FiSend } from "react-icons/fi";
-import Btn from "../Btn";
+import Btn from "../common/Btn";
 import { useRef } from "react";
 import emailjs from "@emailjs/browser";
 import { ToastContainer, toast } from "react-toastify";

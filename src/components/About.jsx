@@ -1,17 +1,17 @@
 import React from "react";
 import { LuMouse } from "react-icons/lu";
-import ScrollMouse from "./Scroll";
+import ScrollMouse from "./animation/Scroll";
 
 const About = () => {
   return (
     <section className="bg-second-bg relative ">
-      <div className="absolute inset-0 bg-[url('/image/about_bg.png')] bg-no-repeat bg-cover bg-center opacity-10 "></div>
+      <div className="absolute inset-0 bg-[url('/image/about_bg.png')] bg-no-repeat bg-cover bg-center opacity-5 "></div>
       <div className="container mx-auto py-[64px] lg:py-[128px] px-[35px] lg:px-0 relative z-10">
         <div className="wrapper">
           <div className="hidden lg:block ">
             <ScrollMouse />
           </div>
-          <div className="flex flex-col xl:flex-row justify-between items-center gap-10 pt-0  ">
+          <div className="flex flex-col xl:flex-row justify-between items-end gap-10 pt-0  ">
             {/* Left side-about description */}
             <div className="flex flex-col gap-16  ">
               {/* Head */}
@@ -19,7 +19,7 @@ const About = () => {
                 About Me
               </h1>
               {/* Description */}
-              <div className="px-[24px] md:px-[40px] py-[58px] bg-primary-bg rounded-3xl">
+              <div className="px-[24px] md:px-[40px] py-[58px] bg-cardBG/70 shadow-white/5 shadow-md backdrop-blur-md  rounded-3xl">
                 <p className="tag-style"> {"<p>"} </p>
                 <h4 className="font-second font-medium text-brand-1 text-[32px] leading-[42px] pt-[16px] ">
                   Hello !

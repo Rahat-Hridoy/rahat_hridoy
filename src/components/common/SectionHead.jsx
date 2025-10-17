@@ -3,7 +3,7 @@ import React from "react";
 const SectionHead = ({ title, text }) => {
   return (
     <div className="pb-16 flex flex-col gap-y-4 ">
-      <h2 className="w-fit mx-auto px-[10px] font-primary font-normal text-brand-1 text-[64px] leading-[72px] text-center relative">
+      <h2 className="w-fit mx-auto px-[10px] font-primary font-normal text-brand-1 text-[44px] md:text-[64px] leading-[72px] text-center relative">
         {title}
         <div className="flex justify-center items-center  absolute inset-0 top-[110%] ">
           <div className="bg-brand-1 w-2 h-2 rounded-full  "></div>

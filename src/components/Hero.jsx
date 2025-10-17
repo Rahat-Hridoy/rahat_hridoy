@@ -2,9 +2,9 @@ import React from "react";
 import { CiLocationOn } from "react-icons/ci";
 import { GoLink } from "react-icons/go";
 import { MdOutlineEmail, MdOutlineWorkOutline } from "react-icons/md";
-import Btn from "./Btn";
+import Btn from "./common/Btn";
 import { PiDownloadSimpleBold } from "react-icons/pi";
-import ShinyText from "./ShinyText";
+import ShinyText from "./animation/ShinyText";
 import { FiPhone } from "react-icons/fi";
 
 const Hero = () => {
@@ -66,9 +66,9 @@ const Hero = () => {
               />
             </h1>
           </div>
-          <div className="grid grid-cols-1 space-y-16 space-x-8 lg:grid-cols-[auto_1fr] xl:grid-cols-[1fr_auto_1fr]   justify-items-center place-items-center">
+          <div className="grid grid-cols-1 space-y-16 space-x-0 md:space-x-8 lg:grid-cols-[auto_1fr] xl:grid-cols-[1fr_auto_1fr]   justify-items-center place-items-center">
             {/* left-side: information  */}
-            <div className=" lg:col-span-2 xl:col-span-1 w-[320px] h-[520px] border-4 border-primary  px-[22px] py-[36px] rounded-tl-[160px] rounded-br-[160px] relative">
+            <div className=" lg:col-span-2 xl:col-span-1 w-[320px] h-[520px] border-4 border-primary  px-[22px] py-[36px] rounded-tl-[160px] rounded-br-[160px] relative bg-cardBG/50 backdrop-blur-xs lg:backdrop-blur-none">
               <div>
                 {/* profile */}
                 <div>
@@ -110,7 +110,7 @@ const Hero = () => {
                   {skills.map((skill) => (
                     <span
                       key={skill.id}
-                      className="max-w-[60px] pera-text text-sm leading-[18px] px-2 bg-brand-1 rounded-full "
+                      className="max-w-[60px] pera-text text-black text-sm leading-[18px] px-2 bg-brand-1 rounded-full "
                     >
                       {skill}
                     </span>
@@ -160,7 +160,7 @@ const Hero = () => {
               </div>
             </div>
             {/* right side-card : experiance */}
-            <div className="max-w-[215px] bg-primary-bg rounded-[80px] px-[32px] py-[48px]  ">
+            <div className="max-w-[215px] bg-cardBG/70 backdrop-blur-xs rounded-[80px] px-[32px] py-[48px]  ">
               {exp.map((item) => (
                 <div
                   key={item.id}

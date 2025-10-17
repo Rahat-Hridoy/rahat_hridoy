@@ -1,7 +1,7 @@
 import React from "react";
-import SectionHead from "../SectionHead";
+import SectionHead from "../common/SectionHead";
 import ProjectCard from "./ProjectCard";
-import Btn from "../Btn";
+import Btn from "../common/Btn";
 
 const Project = () => {
   const cardContent = [

@@ -20,7 +20,7 @@ const ProjectCard = ({ cardContent }) => {
   return (
     <>
       {/* Card */}
-      <div className="max-w-[490px] rounded-2xl border border-brand-2/50 project-art flex flex-col ">
+      <div className="max-w-[490px] rounded-2xl border-2 border-brand-1/50 project-art flex flex-col duration-200 hover:shadow-black/30 hover:shadow-lg hover:bg-cardBG/70 ">
         {/* figure */}
         <div className="w-full h-[250px] overflow-hidden rounded-t-2xl  ">
           <img src={cardContent.img} alt="image" className="animate-scroll " />
