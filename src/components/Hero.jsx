@@ -6,6 +6,8 @@ import Btn from "./common/Btn";
 import { PiDownloadSimpleBold } from "react-icons/pi";
 import ShinyText from "./animation/ShinyText";
 import { FiPhone } from "react-icons/fi";
+import CountUp from "./animation/CountUp";
+import GradientText from "./animation/GradientText";
 
 const Hero = () => {
   const info = [
@@ -57,13 +59,15 @@ const Hero = () => {
       <div className="container mx-auto relative z-10  px-[35px] lg:px-0 ">
         <div className="wrapper pb-[64px] lg:pb-[128px] pt-[128px] md:pt-[150px] lg:pt-[90px] ">
           <div className="hidden lg:block ">
-            <h1 className="font-primary font-normal  text-[117px] text-center leading-[134px] py-[64px]">
-              <ShinyText
-                text="Developer"
-                disabled={false}
-                speed={5}
-                className="text-brand-1/60"
-              />
+            <h1 className="">
+              <GradientText
+                colors={["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#40ffaa"]}
+                animationSpeed={8}
+                showBorder={false}
+                className="font-primary font-medium  text-[117px] text-center leading-[134px] py-[64px] "
+              >
+                Developer
+              </GradientText>
             </h1>
           </div>
           <div className="grid grid-cols-1 space-y-16 space-x-0 md:space-x-8 lg:grid-cols-[auto_1fr] xl:grid-cols-[1fr_auto_1fr]   justify-items-center place-items-center">
@@ -166,9 +170,14 @@ const Hero = () => {
                   key={item.id}
                   className=" flex justify-center items-center gap-x-4 py-[16px] "
                 >
-                  <p className="font-second font-medium text-brand-1 text-[48px] leading-[62px] ">
-                    {item.digit}
-                  </p>
+                  <CountUp
+                    from={0}
+                    to={item.digit}
+                    separator=","
+                    direction="up"
+                    duration={1}
+                    className="font-second font-medium text-brand-1 text-[48px] leading-[62px]"
+                  />
                   <p className="pera-text text-[16px] leading-[20px] max-w-[106px] ">
                     {item.title}
                   </p>

@@ -5,6 +5,18 @@
 @import "tw-animate-css";
 
 @theme {
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
   @keyframes shine {
     0% {
       background-position: 200% 0;
@@ -28,8 +40,11 @@
   animation: scroll 3s linear forwards;
 }
 
+.animate-gradient {
+  animation: gradient linear infinite;
+}
 .animate-shine {
-  animation: shine linear infinite;
+  animation: shine 8s linear infinite;
 }
 
 /* Color-Brand 1 : Heading , border color
