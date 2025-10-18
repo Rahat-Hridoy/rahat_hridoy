@@ -4,6 +4,7 @@ import About from "./About";
 import Skils from "./Skils";
 import Contact from "./contact/Contact";
 import Project from "./project/Project";
+import SplashCursor from "./animation/SplashCursor";
 
 export const Main = () => {
   return (
@@ -13,6 +14,7 @@ export const Main = () => {
       <Skils />
       <Project />
       <Contact />
+      {/* <SplashCursor /> */}
     </main>
   );
 };

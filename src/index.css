@@ -4,6 +4,11 @@
 
 @import "tw-animate-css";
 
+/* ---break--- 
+*/
+
+@custom-variant dark (&:is(.dark *));
+
 @theme {
   @keyframes gradient {
     0% {

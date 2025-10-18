@@ -8,6 +8,7 @@ import ShinyText from "./animation/ShinyText";
 import { FiPhone } from "react-icons/fi";
 import CountUp from "./animation/CountUp";
 import GradientText from "./animation/GradientText";
+import TextType from "./animation/TextType";
 
 const Hero = () => {
   const info = [
@@ -57,7 +58,7 @@ const Hero = () => {
     <section className="bg-second-bg  relative shadow-2xl " id="home">
       <div className="absolute inset-0 bg-[url('/image/framer_bg.png')] bg-no-repeat bg-cover bg-center opacity-15 "></div>
       <div className="container mx-auto relative z-10  px-[35px] lg:px-0 ">
-        <div className="wrapper pb-[64px] lg:pb-[128px] pt-[128px] md:pt-[150px] lg:pt-[90px] ">
+        <div className="wrapper pb-[32px] lg:pb-[64px] pt-[128px] md:pt-[150px] lg:pt-[90px] ">
           <div className="hidden lg:block ">
             <h1 className="">
               <GradientText
@@ -83,7 +84,7 @@ const Hero = () => {
                       className="w-[90px] h-[90px] rounded-full border-4 border-brand-1 "
                     />
                   </div>
-                  <h3 className="font-second font-medium text-primary text-[32px] leading-[42px] text-center">
+                  <h3 className="font-second font-medium text-primary text-[32px] leading-[42px] text-center ">
                     Rahat
                   </h3>
                   <h5 className="font-second font-normal text-primary text-sm leading-[18px] text-center">
@@ -150,8 +151,17 @@ const Hero = () => {
               <div>
                 <p className="tag-style"> {"<p>"} </p>
                 <p className="max-w-[650px] pera-text text-[16px] leading-[20px] pl-6 ">
-                  I help business grow by crafting amazing web experiences. If
-                  you’re looking for a developer that likes to get stuff done,
+                  <TextType
+                    text={[
+                      "I help business grow by crafting amazing web experiences. If you’re looking for a developer that likes to get stuff done.",
+                    ]}
+                    typingSpeed={75}
+                    pauseDuration={1500}
+                    showCursor={true}
+                    cursorCharacter="|"
+                    animation="view"
+                    className="max-w-[650px] pera-text text-[16px] leading-[20px] pl-1 "
+                  />
                 </p>
                 <p className="tag-style"> {"</p>"} </p>
               </div>
