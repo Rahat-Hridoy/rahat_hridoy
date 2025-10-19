@@ -8,7 +8,7 @@ import ShinyText from "./animation/ShinyText";
 import { FiPhone } from "react-icons/fi";
 import CountUp from "./animation/CountUp";
 import GradientText from "./animation/GradientText";
-import TextType from "./animation/TextType";
+import TypingAnimation from "./animation/typingAnimation";
 
 const Hero = () => {
   const info = [
@@ -20,12 +20,12 @@ const Hero = () => {
     {
       id: 2,
       icon: <CiLocationOn />,
-      text: " Bangladesh",
+      text: " Sylhet, Bangladesh",
     },
     {
       id: 3,
       icon: <MdOutlineWorkOutline />,
-      text: " Full-time",
+      text: " Full-time / Remote",
     },
     {
       id: 4,
@@ -138,30 +138,20 @@ const Hero = () => {
             <div className=" flex flex-col  gap-y-[32px]  ">
               <div>
                 <p className="tag-style"> {"<h1>"} </p>
-                <h1 className="intro-text pl-6">
+                <TypingAnimation />
+                {/* <h1 className="intro-text pl-6">
                   {" "}
-                  Hey <br /> I'm <span className="text-brand-1">
-                    Rahat
-                  </span>{" "}
+                  Hi <br /> I'm <span className="text-brand-1">Rahat</span>
                   <br />
                   Full-Stack Devoloper{" "}
-                </h1>
+                </h1> */}
                 <p className="tag-style"> {"</h1>"} </p>
               </div>
               <div>
                 <p className="tag-style"> {"<p>"} </p>
                 <p className="max-w-[650px] pera-text text-[16px] leading-[20px] pl-6 ">
-                  <TextType
-                    text={[
-                      "I help business grow by crafting amazing web experiences. If you’re looking for a developer that likes to get stuff done.",
-                    ]}
-                    typingSpeed={75}
-                    pauseDuration={1500}
-                    showCursor={true}
-                    cursorCharacter="|"
-                    animation="view"
-                    className="max-w-[650px] pera-text text-[16px] leading-[20px] pl-1 "
-                  />
+                  I help business grow by crafting amazing web experiences. If
+                  you’re looking for a developer that likes to get stuff done.
                 </p>
                 <p className="tag-style"> {"</p>"} </p>
               </div>
