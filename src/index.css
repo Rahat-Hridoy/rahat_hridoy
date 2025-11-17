@@ -76,11 +76,11 @@ html {
 }
 
 .section-padding {
-  @apply py-[64px] lg:py-[128px];
+  @apply py-[32px] lg:py-[64px];
 }
 
 .container {
-  @apply px-[35px] lg:px-0;
+  @apply px-[20px] lg:px-0;
 }
 
 .nav-menu-social {

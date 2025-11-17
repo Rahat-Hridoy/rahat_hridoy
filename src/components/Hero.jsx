@@ -1,10 +1,8 @@
 import React from "react";
 import { CiLocationOn } from "react-icons/ci";
-import { GoLink } from "react-icons/go";
 import { MdOutlineEmail, MdOutlineWorkOutline } from "react-icons/md";
 import Btn from "./common/Btn";
 import { PiDownloadSimpleBold } from "react-icons/pi";
-import ShinyText from "./animation/ShinyText";
 import { FiPhone } from "react-icons/fi";
 import CountUp from "./animation/CountUp";
 import GradientText from "./animation/GradientText";
@@ -34,12 +32,12 @@ const Hero = () => {
     },
   ];
 
-  const skills = ["HTML", "CSS", "JS", "React"];
+  const skills = ["Next JS", "JavaScript", "Tailwind"];
 
   const exp = [
     {
       id: 1,
-      digit: 4,
+      digit: 3,
       title: "Programming Language",
     },
     {
@@ -49,13 +47,13 @@ const Hero = () => {
     },
     {
       id: 3,
-      digit: 8,
+      digit: 2,
       title: "Year of experiance",
     },
   ];
 
   return (
-    <section className="bg-second-bg  relative shadow-2xl " id="home">
+    <section className="relative " id="home">
       <div className="absolute inset-0 bg-[url('/image/framer_bg.png')] bg-no-repeat bg-cover bg-center opacity-15 "></div>
       <div className="container mx-auto relative z-10  px-[35px] lg:px-0 ">
         <div className="wrapper pb-[32px] lg:pb-[64px] pt-[128px] md:pt-[150px] lg:pt-[90px] ">
@@ -65,7 +63,7 @@ const Hero = () => {
                 colors={["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#40ffaa"]}
                 animationSpeed={8}
                 showBorder={false}
-                className="font-primary font-medium  text-[117px] text-center leading-[134px] py-[64px] "
+                className="font-primary font-medium  text-[120px] text-center leading-[134px] py-[64px] "
               >
                 Developer
               </GradientText>
@@ -84,8 +82,8 @@ const Hero = () => {
                       className="w-[90px] h-[90px] rounded-full border-4 border-brand-1 "
                     />
                   </div>
-                  <h3 className="font-second font-medium text-primary text-[32px] leading-[42px] text-center ">
-                    Rahat
+                  <h3 className="font-second font-medium text-primary text-xl leading-[42px] text-center ">
+                    Md Rahatul Islam
                   </h3>
                   <h5 className="font-second font-normal text-primary text-sm leading-[18px] text-center">
                     Full-stack Developer{" "}
@@ -111,40 +109,36 @@ const Hero = () => {
                   </ul>
                 </div>
                 {/* skills */}
-                <div className="flex items-center justify-start gap-4 pb-8  ">
+                <div className="flex items-center justify-start gap-3 pb-8 flex-wrap  ">
                   {skills.map((skill) => (
                     <span
                       key={skill.id}
-                      className="max-w-[60px] pera-text !text-black text-sm leading-[18px] px-2 bg-brand-1 rounded-full "
+                      className="pera-text !text-black text-sm leading-[18px] px-2 bg-brand-1 rounded-full "
                     >
                       {skill}
                     </span>
                   ))}
                 </div>
-                {/* CV button */}
               </div>
-              <a
-                href="/document/MD-RAHATUL-ISLAM-resume-post-web-designer.pdf"
-                target="_blank"
-              >
-                <Btn
-                  text={"Download CV"}
-                  icon={PiDownloadSimpleBold}
-                  color={"bg-primary hover:bg-primary/90 active:bg-primary"}
-                />
-              </a>
+              {/* CV button */}
+              <div className="">
+                <a
+                  href="/document/MD-RAHATUL-ISLAM-resume-post-web-designer.pdf"
+                  target="_blank"
+                >
+                  <Btn
+                    text={"Download CV"}
+                    icon={PiDownloadSimpleBold}
+                    color={"bg-primary hover:bg-primary/90 active:bg-primary"}
+                  />
+                </a>
+              </div>
             </div>
             {/* Middle-side : intro */}
             <div className=" flex flex-col  gap-y-[32px]  ">
               <div>
                 <p className="tag-style"> {"<h1>"} </p>
                 <TypingAnimation />
-                {/* <h1 className="intro-text pl-6">
-                  {" "}
-                  Hi <br /> I'm <span className="text-brand-1">Rahat</span>
-                  <br />
-                  Full-Stack Devoloper{" "}
-                </h1> */}
                 <p className="tag-style"> {"</h1>"} </p>
               </div>
               <div>

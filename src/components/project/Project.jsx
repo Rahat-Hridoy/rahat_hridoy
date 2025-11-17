@@ -34,8 +34,8 @@ const Project = () => {
     },
   ];
   return (
-    <section className="bg-second-bg" id="project">
-      <div className="container mx-auto px-[35px] lg:px-0 py-[64px] lg:py-[128px]">
+    <section className="section-padding" id="project">
+      <div className="container mx-auto">
         <div className="wrapper">
           <SectionHead
             title={"Project"}

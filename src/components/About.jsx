@@ -4,20 +4,20 @@ import ScrollMouse from "./animation/Scroll";
 
 const About = () => {
   return (
-    <section className="relative">
+    <section className="section-padding relative" id="about">
       <div className="w-[600px] h-[600px] rounded-full shadow-[100px] top-[30px] right-[10%] absolute bg-brand-1/50 blur-[250px] "></div>
       <div className="container mx-auto relative z-10">
         <div className="wrapper">
           <div className="hidden lg:block ">
             <ScrollMouse />
           </div>
-          <div className="flex flex-col xl:flex-row justify-between items-center lg:items-end gap-10 pt-0  ">
+          {/* Head */}
+          <h1 className="max-w-[367px] font-primary font-normal text-primary text-[32px] md:text-[64px] leading-[36px] md:leading-[72px] px-[40px] py-[16px] border-4 border-brand-1 rounded-tl-[30px] rounded-br-[30px] md:rounded-tl-[50px] md:rounded-br-[50px] bg-primary-bg mb-16 mx-auto md:mx-0 ">
+            About Me
+          </h1>
+          <div className="grid grid-cols-1 lg:grid-cols-[2fr_1fr] justify-items-center gap-10">
             {/* Left side-about description */}
-            <div className="flex flex-col gap-16  ">
-              {/* Head */}
-              <h1 className="max-w-[367px] font-primary font-normal text-primary text-[32px] md:text-[64px] leading-[36px] md:leading-[72px] px-[40px] py-[16px] border-4 border-brand-1 rounded-tl-[50px] rounded-br-[50px] bg-primary-bg mx-auto md:mx-0 ">
-                About Me
-              </h1>
+            <div className="order-2 lg:order-0">
               {/* Description */}
               <div className="px-[24px] md:px-[40px] py-[58px] bg-cardBG/70 shadow-white/5 shadow-md backdrop-blur-md  rounded-3xl">
                 <p className="tag-style"> {"<p>"} </p>
@@ -44,11 +44,11 @@ const About = () => {
               </div>
             </div>
             {/* right side - image */}
-            <div>
+            <div className="order-0 lg:order-2">
               <img
-                src="/image/about_me.jpg"
+                src="/image/rahatHridoy_about.jpg"
                 alt="image"
-                className="w-[272px] md:w-[462px]  rounded-3xl object-cover object-center overflow-hidden  "
+                className="w-[272px] md:w-full h-full rounded-3xl object-cover object-center overflow-hidden  "
               />
             </div>
           </div>

@@ -5,9 +5,9 @@ import { ImReddit } from "react-icons/im";
 
 const Footer = () => {
   return (
-    <section className="bg-second-bg border-t-1 border-primary/20 ">
+    <section className="bg-sectionBG border-t-1 border-primary/20 ">
       <div className="container mx-auto py-[16px]">
-        <div className="grid grid-cols-1 gap-y-[18px] lg:gap-y-0 lg:grid-cols-3 items-center justify-items-center ">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-y-[18px] lg:gap-y-0 items-center justify-items-center">
           {/* license */}
           <div className="max-w-[300px] order-2 lg:order-1 ">
             <p className=" font-primary font-light text-primary text-[16px] leading-[18px] ">
@@ -41,6 +41,7 @@ const Footer = () => {
               </div>
             </div>
           </div>
+
           {/* Credit */}
           <div className=" order-3 lg:order-3 ">
             <p className="font-primary font-light text-primary text-[16px] leading-[18px] ">

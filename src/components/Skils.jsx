@@ -53,9 +53,9 @@ const Skils = () => {
   ];
 
   return (
-    <section className="bg-primary-bg relative">
-      <div className="absolute inset-0 bg-[url('/image/skill_bg.png')] bg-no-repeat bg-cover bg-center opacity-10"></div>
-      <div className="container mx-auto py-[128px] relative z-10 ">
+    <section className="relative section-padding" id="skill">
+      <div className="w-[600px] h-[600px] rounded-full shadow-[100px] -bottom-[100px] -left-[10%] absolute bg-brand-1/50 blur-[250px] "></div>
+      <div className="container mx-auto relative z-10 ">
         <div className="wrapper">
           <ScrollMouse />
           {/* Section-title */}

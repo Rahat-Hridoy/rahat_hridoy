@@ -5,8 +5,8 @@ import Form from "./Form";
 
 const Contact = () => {
   return (
-    <section className="bg-second-bg " id="contact">
-      <div className="container mx-auto py-16">
+    <section className="section-padding" id="contact">
+      <div className="container mx-auto">
         <div className="wrapper">
           <ScrollMouse />
           <SectionHead
