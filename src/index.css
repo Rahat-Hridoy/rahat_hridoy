@@ -2,12 +2,7 @@
 
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
 
-@import "tw-animate-css";
-
-/* ---break--- 
-*/
-
-@custom-variant dark (&:is(.dark *));
+/* @import "tw-animate-css"; */
 
 @theme {
   @keyframes gradient {
@@ -52,12 +47,13 @@
   animation: shine 8s linear infinite;
 }
 
-/* Color-Brand 1 : Heading , border color
-  Color-Brand 2 : Button color
-  Color- Primary : text color; 
-  Color- primary-bg : Whole page background color;
-  Color-second-bg: card background color. 
-*/
+:root {
+  --primary: #fff;
+  --brand-1: #12f7d6;
+  --primary-bg: #001d2f;
+  --sectionBG: #001e2b;
+  --cardBG: #00111b;
+}
 
 @theme {
   --container-*: initial;
@@ -67,25 +63,24 @@
   --container-xl: 1664px;
   --font-primary: "Ubuntu", sans-serif;
   --font-second: "IBM Plex Mono", monospace;
-  --color-primary: #fff;
-  --color-brand-1: #12f7d6;
+  --color-primary: var(--primary);
+  --color-brand-1: var(--brand-1);
   /* --color-brand-1: #00ed64; */
-  --color-primary-bg: #001d2f;
-  --color-second-bg: #1a1e23;
-  --color-sectionBG: #001e2b;
-  --color-cardBG: #00111b;
+  --color-primary-bg: var(--primary-bg);
+  --color-sectionBG: var(--sectionBG);
+  --color-cardBG: var(--cardBG);
 }
 
-.html {
+html {
   scroll-behavior: smooth;
 }
 
-section {
-  @apply bg-sectionBG;
+.section-padding {
+  @apply py-[64px] lg:py-[128px];
 }
 
 .container {
-  @apply px-[20px] lg:px-0;
+  @apply px-[35px] lg:px-0;
 }
 
 .nav-menu-social {

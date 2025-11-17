@@ -8,7 +8,7 @@ import SplashCursor from "./animation/SplashCursor";
 
 export const Main = () => {
   return (
-    <main>
+    <main className="bg-sectionBG">
       <Hero />
       <About />
       <Skils />

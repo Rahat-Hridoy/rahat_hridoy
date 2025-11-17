@@ -4,9 +4,9 @@ import ScrollMouse from "./animation/Scroll";
 
 const About = () => {
   return (
-    <section className="bg-second-bg relative ">
-      <div className="absolute inset-0 bg-[url('/image/about_bg.png')] bg-no-repeat bg-cover bg-center opacity-5 "></div>
-      <div className="container mx-auto py-[64px] lg:py-[128px] px-[35px] lg:px-0 relative z-10">
+    <section className="relative">
+      <div className="w-[600px] h-[600px] rounded-full shadow-[100px] top-[30px] right-[10%] absolute bg-brand-1/50 blur-[250px] "></div>
+      <div className="container mx-auto relative z-10">
         <div className="wrapper">
           <div className="hidden lg:block ">
             <ScrollMouse />
