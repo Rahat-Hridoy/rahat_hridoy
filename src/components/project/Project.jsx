@@ -33,7 +33,7 @@ const Project = () => {
     },
     {
       id: 4,
-      img: "/image/LMS_Website.png",
+      img: "/image/plumber-point-website.png",
       title: "LMS Website",
       text: " Built my first project with React.js and Tailwind CSS — a simple LMS website. Learned component-based development, responsive design, and state management.",
       projectTech: ["React", "Tailwind CSS", "CSS"],
