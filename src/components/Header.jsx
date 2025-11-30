@@ -4,12 +4,9 @@ import { RiRedditLine } from "react-icons/ri";
 
 const Header = () => {
   return (
-    <header className="fixed top-6 left-0 w-full z-50 ">
-      <nav className="container mx-auto">
-        <div
-          className="wrapper flex items-center justify-between gap-7 min-h-[60px] md:min-h-[90px] px-[10px] md:px-[28px] 
-          bg-black/30 backdrop-blur-lg  rounded-2xl shadow-2xl"
-        >
+    <header className="fixed top-6 left-0 w-full z-100 ">
+      <nav className="container mx-auto ">
+        <div className="wrapper flex items-center justify-between gap-7 min-h-[60px] md:min-h-[90px] px-[10px] md:px-[28px] bg-black/30 backdrop-blur-lg  rounded-2xl shadow-2xl">
           {/* logo */}
           <div>
             <a

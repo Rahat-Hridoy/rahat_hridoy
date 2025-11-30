@@ -5,21 +5,21 @@ import ScrollMouse from "./animation/Scroll";
 const About = () => {
   return (
     <section className="section-padding relative" id="about">
-      <div className="w-[600px] h-[600px] rounded-full shadow-[100px] top-[30px] right-[10%] absolute bg-brand-1/50 blur-[250px] "></div>
+      <div className="w-[60%] h-[60%] absolute top-[10%] right-[5%] rounded-full shadow-[100px] bg-brand-1/60 blur-[250px]"></div>
       <div className="container mx-auto relative z-10">
         <div className="wrapper">
           <div className="hidden lg:block ">
             <ScrollMouse />
           </div>
           {/* Head */}
-          <h1 className="max-w-[367px] font-primary font-normal text-primary text-[32px] md:text-[64px] leading-[36px] md:leading-[72px] px-[40px] py-[16px] border-4 border-brand-1 rounded-tl-[30px] rounded-br-[30px] md:rounded-tl-[50px] md:rounded-br-[50px] bg-primary-bg mb-16 mx-auto md:mx-0 ">
+          <h1 className="w-fit md:max-w-[367px] font-primary font-normal text-primary text-[32px] md:text-[64px] leading-[36px] md:leading-[72px] px-8 md:px-[40px] py-[16px] border-4 border-brand-1 rounded-tl-[30px] rounded-br-[30px] md:rounded-tl-[50px] md:rounded-br-[50px] bg-primary-bg mb-16 mx-auto md:mx-0 text-center">
             About Me
           </h1>
-          <div className="grid grid-cols-1 lg:grid-cols-[2fr_auto] justify-items-center items-stretch gap-10">
+          <div className="grid grid-cols-1 lg:grid-cols-[2fr_auto] justify-items-center items-stretch gap-10 z-100">
             {/* Left side-about description */}
             <div className="order-2 lg:order-0">
               {/* Description */}
-              <div className="px-[24px] md:px-[40px] py-[58px] bg-cardBG/70 shadow-white/5 shadow-md backdrop-blur-md  rounded-3xl">
+              <div className="px-[24px] md:px-[40px] py-[58px] bg-cardBG/95 shadow-white/5 shadow-md rounded-3xl">
                 <p className="tag-style"> {"<p>"} </p>
                 <h4 className="font-second font-medium text-brand-1 text-[32px] leading-[42px] pt-[16px] ">
                   Hello !

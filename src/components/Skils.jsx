@@ -54,7 +54,7 @@ const Skils = () => {
 
   return (
     <section className="relative section-padding" id="skill">
-      <div className="w-[600px] h-[600px] rounded-full shadow-[100px] -bottom-[100px] -left-[10%] absolute bg-brand-1/50 blur-[250px] "></div>
+      <div className="w-[60%] h-[60%] absolute -bottom-[10%] -left-[30%] rounded-full shadow-[100px] bg-brand-1/60 blur-[250px]"></div>
       <div className="container mx-auto relative z-10 ">
         <div className="wrapper">
           <ScrollMouse />

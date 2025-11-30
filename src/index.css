@@ -80,7 +80,7 @@ html {
 }
 
 .container {
-  @apply px-[20px] lg:px-0;
+  @apply px-[20px];
 }
 
 .nav-menu-social {
