@@ -15,7 +15,7 @@ const About = () => {
           <h1 className="max-w-[367px] font-primary font-normal text-primary text-[32px] md:text-[64px] leading-[36px] md:leading-[72px] px-[40px] py-[16px] border-4 border-brand-1 rounded-tl-[30px] rounded-br-[30px] md:rounded-tl-[50px] md:rounded-br-[50px] bg-primary-bg mb-16 mx-auto md:mx-0 ">
             About Me
           </h1>
-          <div className="grid grid-cols-1 lg:grid-cols-[2fr_1fr] justify-items-center items-center gap-10">
+          <div className="grid grid-cols-1 lg:grid-cols-[2fr_auto] justify-items-center items-stretch gap-10">
             {/* Left side-about description */}
             <div className="order-2 lg:order-0">
               {/* Description */}
@@ -48,7 +48,7 @@ const About = () => {
               <img
                 src="/image/rahatHridoy_about.jpg"
                 alt="image"
-                className="w-[272px] md:w-full h-full rounded-3xl object-cover object-center overflow-hidden  "
+                className="w-[272px] md:w-full h-[450px] rounded-3xl object-cover object-center overflow-hidden  "
               />
             </div>
           </div>
