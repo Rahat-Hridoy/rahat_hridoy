@@ -1,6 +1,6 @@
 import React from "react";
-import ScrollMouse from "../animation/Scroll";
-import SectionHead from "../common/SectionHead";
+import ScrollMouse from "../../animation/Scroll";
+import SectionHead from "../../common/SectionHead";
 import Form from "./Form";
 import { motion } from "motion/react";
 

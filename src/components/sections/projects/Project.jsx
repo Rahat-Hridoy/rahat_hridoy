@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import SectionHead from "../common/SectionHead";
+import SectionHead from "../../common/SectionHead";
 import ProjectCard from "./ProjectCard";
 import { motion, AnimatePresence } from "motion/react";
 
@@ -145,38 +145,40 @@ const Project = () => {
           </motion.div>
         </AnimatePresence>
 
-        {/* PAGINATION */}
-        <div className="mt-12 flex justify-center items-center gap-4">
+        {/* MODERN PAGINATION */}
+        <div className="mt-16 flex justify-center items-center gap-4">
           <button
             onClick={handlePrev}
             disabled={currentPage === 1}
-            className={`px-4 py-2 rounded-lg font-second font-medium text-lg transition-colors ${currentPage === 1
-                ? "text-gray-500 cursor-not-allowed"
-                : "text-brand-1 hover:text-white"
+            className={`px-4 py-2 rounded-lg font-second font-medium text-lg transition-all duration-300 border border-brand-1 ${currentPage === 1
+                ? "text-gray-600 border-gray-600 cursor-not-allowed opacity-50"
+                : "text-brand-1 hover:bg-brand-1 hover:text-white hover:shadow-[0_0_15px_rgba(8,_112,_184,_0.4)]"
               }`}
           >
             Prev
           </button>
 
-          {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
-            <button
-              key={page}
-              onClick={() => handlePageChange(page)}
-              className={`w-10 h-10 rounded-full font-second font-bold text-lg transition-all ${currentPage === page
-                  ? "bg-brand-1 text-primary-bg scale-110"
-                  : "bg-transparent text-brand-1 border border-brand-1 hover:bg-brand-1/20"
-                }`}
-            >
-              {page}
-            </button>
-          ))}
+          <div className="flex gap-2">
+            {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+              <button
+                key={page}
+                onClick={() => handlePageChange(page)}
+                className={`w-10 h-10 rounded-lg font-second font-bold text-lg transition-all duration-300 flex items-center justify-center border ${currentPage === page
+                    ? "bg-brand-1 text-white border-brand-1 shadow-[0_0_15px_rgba(8,_112,_184,_0.4)] scale-110"
+                    : "bg-transparent text-gray-400 border-gray-700 hover:border-brand-1 hover:text-brand-1"
+                  }`}
+              >
+                {page}
+              </button>
+            ))}
+          </div>
 
           <button
             onClick={handleNext}
             disabled={currentPage === totalPages}
-            className={`px-4 py-2 rounded-lg font-second font-medium text-lg transition-colors ${currentPage === totalPages
-                ? "text-gray-500 cursor-not-allowed"
-                : "text-brand-1 hover:text-white"
+            className={`px-4 py-2 rounded-lg font-second font-medium text-lg transition-all duration-300 border border-brand-1 ${currentPage === totalPages
+                ? "text-gray-600 border-gray-600 cursor-not-allowed opacity-50"
+                : "text-brand-1 hover:bg-brand-1 hover:text-white hover:shadow-[0_0_15px_rgba(8,_112,_184,_0.4)]"
               }`}
           >
             Next

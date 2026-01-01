@@ -1,6 +1,6 @@
 import React from "react";
-import { LuMouse } from "react-icons/lu";
-import ScrollMouse from "./animation/Scroll";
+import ScrollMouse from "../../animation/Scroll";
+import SectionHead from "../../common/SectionHead";
 import { motion } from "motion/react";
 
 const About = () => {

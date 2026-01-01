@@ -1,7 +1,8 @@
 import "./App.css";
-import Footer from "./components/Footer";
-import Header from "./components/Header";
-import { Main } from "./components/Main";
+import Footer from "./components/layout/Footer";
+import Header from "./components/layout/Header";
+import { Main } from "./components/layout/Main";
+import ScrollToTop from "./components/common/ScrollToTop";
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <Header />
       <Main />
       <Footer />
+      <ScrollToTop />
     </>
   );
 }

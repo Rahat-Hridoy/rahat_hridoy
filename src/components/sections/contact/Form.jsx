@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { FiSend } from "react-icons/fi";
-import Btn from "../common/Btn";
+import Btn from "../../common/Btn";
 import { useRef } from "react";
 import emailjs from "@emailjs/browser";
 import { ToastContainer, toast } from "react-toastify";
@@ -147,9 +147,8 @@ const Form = () => {
               type="text"
               name="user_name"
               placeholder="Enter your name"
-              className={`form-input-box relative ${
-                errors.user_name ? "border-red-500 border-2" : ""
-              }`}
+              className={`form-input-box relative ${errors.user_name ? "border-red-500 border-2" : ""
+                }`}
               value={formData.user_name}
               onChange={handleInputChange}
               required
@@ -175,9 +174,8 @@ const Form = () => {
               type="email"
               name="user_email"
               placeholder="Enter your email"
-              className={`form-input-box  ${
-                errors.user_email ? "border-red-500 border-2" : ""
-              }`}
+              className={`form-input-box  ${errors.user_email ? "border-red-500 border-2" : ""
+                }`}
               value={formData.user_email}
               onChange={handleInputChange}
               required
@@ -203,9 +201,8 @@ const Form = () => {
             <textarea
               name="message"
               placeholder="Enter your message"
-              className={`form-input-box h-[150px] resize-none ${
-                errors.message ? "border-red-500 border-2" : ""
-              }`}
+              className={`form-input-box h-[150px] resize-none ${errors.message ? "border-red-500 border-2" : ""
+                }`}
               value={formData.message}
               onChange={handleInputChange}
               required

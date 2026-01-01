@@ -35,11 +35,10 @@ const ProjectCard = ({ cardContent }) => {
         {/* Overlay for depth */}
         <div className="absolute inset-0 bg-brand-1/10 lg:opacity-0 group-hover:opacity-10 z-10 transition-opacity duration-300"></div>
         <motion.img
-          whileHover={{ scale: 1.1 }}
           transition={{ duration: 0.5 }}
           src={cardContent.img}
           alt="image"
-          className="w-full h-full object-cover object-top"
+          className="w-full h-full object-cover object-top transition-all duration-[3000ms] ease-in-out group-hover:object-bottom"
         />
       </div>
       {/* article  */}
