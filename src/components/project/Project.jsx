@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import SectionHead from "../common/SectionHead";
 import ProjectCard from "./ProjectCard";
+import { motion, AnimatePresence } from "motion/react";
 
 const Project = () => {
   const cardContent = [
@@ -87,17 +88,36 @@ const Project = () => {
     },
   ];
 
-  const [visibleCount, setVisibleCount] = useState(3);
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 3;
+  const totalPages = Math.ceil(cardContent.length / itemsPerPage);
 
-  const handleShowMore = () => {
-    if (allShown) {
-      setVisibleCount((prev) => prev - prev + 3);
-    } else {
-      setVisibleCount((prev) => prev + 3);
-    }
+  const handlePageChange = (pageNumber) => {
+    setCurrentPage(pageNumber);
   };
 
-  const allShown = visibleCount >= cardContent.length;
+  const handlePrev = () => {
+    if (currentPage > 1) setCurrentPage((prev) => prev - 1);
+  };
+
+  const handleNext = () => {
+    if (currentPage < totalPages) setCurrentPage((prev) => prev + 1);
+  };
+
+  const currentItems = cardContent.slice(
+    (currentPage - 1) * itemsPerPage,
+    currentPage * itemsPerPage
+  );
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2, // Stagger effect
+      },
+    },
+  };
 
   return (
     <section className="section-padding" id="project">
@@ -110,21 +130,56 @@ const Project = () => {
         </div>
 
         {/* CARDs */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 justify-items-center gap-6">
-          {cardContent.slice(0, visibleCount).map((item) => (
-            <ProjectCard key={item.id} cardContent={item} />
-          ))}
-        </div>
-
-        {/* SHOW MORE BUTTON */}
-        <div className="mt-12">
-          <button
-            onClick={handleShowMore}
-            className={`mx-auto bg-brand-1 rounded-full flex items-center justify-center gap-x-4 px-8 py-4 duration-300 hover:cursor-pointer active:scale-95`}
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={currentPage}
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+            exit={{ opacity: 0, y: -20, transition: { duration: 0.3 } }}
+            className="grid grid-cols-1 lg:grid-cols-3 justify-items-center gap-6"
           >
-            <span className="font-primary font-medium text-[20px] text-primary-bg leading-[24px] ">
-              {allShown ? "Show Less" : "See More"}
-            </span>
+            {currentItems.map((item) => (
+              <ProjectCard key={item.id} cardContent={item} />
+            ))}
+          </motion.div>
+        </AnimatePresence>
+
+        {/* PAGINATION */}
+        <div className="mt-12 flex justify-center items-center gap-4">
+          <button
+            onClick={handlePrev}
+            disabled={currentPage === 1}
+            className={`px-4 py-2 rounded-lg font-second font-medium text-lg transition-colors ${currentPage === 1
+                ? "text-gray-500 cursor-not-allowed"
+                : "text-brand-1 hover:text-white"
+              }`}
+          >
+            Prev
+          </button>
+
+          {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+            <button
+              key={page}
+              onClick={() => handlePageChange(page)}
+              className={`w-10 h-10 rounded-full font-second font-bold text-lg transition-all ${currentPage === page
+                  ? "bg-brand-1 text-primary-bg scale-110"
+                  : "bg-transparent text-brand-1 border border-brand-1 hover:bg-brand-1/20"
+                }`}
+            >
+              {page}
+            </button>
+          ))}
+
+          <button
+            onClick={handleNext}
+            disabled={currentPage === totalPages}
+            className={`px-4 py-2 rounded-lg font-second font-medium text-lg transition-colors ${currentPage === totalPages
+                ? "text-gray-500 cursor-not-allowed"
+                : "text-brand-1 hover:text-white"
+              }`}
+          >
+            Next
           </button>
         </div>
       </div>

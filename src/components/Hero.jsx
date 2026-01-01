@@ -7,6 +7,7 @@ import { FiPhone } from "react-icons/fi";
 import CountUp from "./animation/CountUp";
 import GradientText from "./animation/GradientText";
 import TypingAnimation from "./animation/typingAnimation";
+import { motion } from "motion/react";
 
 const Hero = () => {
   const info = [
@@ -71,12 +72,19 @@ const Hero = () => {
           </div>
           <div className="grid grid-cols-1 space-y-16 space-x-0 md:space-x-8 lg:grid-cols-[auto_1fr] xl:grid-cols-[1fr_auto_1fr]   justify-items-center place-items-center">
             {/* left-side: information  */}
-            <div className=" lg:col-span-2 xl:col-span-1 w-[320px] h-[520px] border-4 border-primary  px-[22px] py-[36px] rounded-tl-[160px] rounded-br-[160px] relative bg-cardBG/50 backdrop-blur-xs lg:backdrop-blur-none">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className=" lg:col-span-2 xl:col-span-1 w-[320px] h-[520px] border-4 border-primary  px-[22px] py-[36px] rounded-tl-[160px] rounded-br-[160px] relative bg-cardBG/50 backdrop-blur-xs lg:backdrop-blur-none"
+            >
               <div>
                 {/* profile */}
                 <div>
                   <div className="flex flex-col justify-center items-center gap-[16px] ">
-                    <img
+                    <motion.img
+                      animate={{ y: [0, -10, 0] }}
+                      transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
                       src="/image/rahatHridoy.jpeg"
                       alt="image"
                       className="w-[90px] h-[90px] rounded-full border-4 border-brand-1 "
@@ -133,9 +141,14 @@ const Hero = () => {
                   />
                 </a>
               </div>
-            </div>
+            </motion.div>
             {/* Middle-side : intro */}
-            <div className=" flex flex-col  gap-y-[32px]  ">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className=" flex flex-col  gap-y-[32px]  "
+            >
               <div>
                 <p className="tag-style"> {"<h1>"} </p>
                 <TypingAnimation />
@@ -156,9 +169,14 @@ const Hero = () => {
                   </button>
                 </a>
               </div>
-            </div>
+            </motion.div>
             {/* right side-card : experiance */}
-            <div className="max-w-[215px] bg-cardBG/70 backdrop-blur-xs rounded-[80px] px-[32px] py-[48px]  ">
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              className="max-w-[215px] bg-cardBG/70 backdrop-blur-xs rounded-[80px] px-[32px] py-[48px]  "
+            >
               {exp.map((item) => (
                 <div
                   key={item.id}
@@ -177,7 +195,7 @@ const Hero = () => {
                   </p>
                 </div>
               ))}
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>

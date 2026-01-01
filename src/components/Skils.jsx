@@ -1,107 +1,170 @@
 import React from "react";
 import ScrollMouse from "./animation/Scroll";
-import { FiMonitor } from "react-icons/fi";
-import { LuSmartphone } from "react-icons/lu";
 import SectionHead from "./common/SectionHead";
-import { RiHtml5Line } from "react-icons/ri";
-import { FaCss3, FaReact } from "react-icons/fa";
-import { SiNodedotjs } from "react-icons/si";
+import { motion } from "motion/react";
+import {
+  FaReact,
+  FaCss3Alt,
+  FaHtml5,
+  FaGitAlt,
+  FaNodeJs,
+  FaFigma,
+} from "react-icons/fa";
+import {
+  SiJavascript,
+  SiTailwindcss,
+  SiNextdotjs,
+  SiMongodb,
+  SiFirebase,
+  SiTypescript,
+  SiRedux,
+  SiVite,
+  SiPostman,
+  SiVercel,
+  SiNetlify,
+} from "react-icons/si";
+import { TbBrandVscode } from "react-icons/tb";
+
+const skillsData = [
+  { name: "HTML5", icon: <FaHtml5 />, color: "#E34F26" },
+  { name: "CSS3", icon: <FaCss3Alt />, color: "#1572B6" },
+  { name: "JavaScript", icon: <SiJavascript />, color: "#F7DF1E" },
+  { name: "TypeScript", icon: <SiTypescript />, color: "#3178C6" },
+  { name: "React", icon: <FaReact />, color: "#61DAFB" },
+  { name: "Next.js", icon: <SiNextdotjs />, color: "#ffffff" },
+  { name: "Redux", icon: <SiRedux />, color: "#764ABC" },
+  { name: "Tailwind", icon: <SiTailwindcss />, color: "#06B6D4" },
+  { name: "Node.js", icon: <FaNodeJs />, color: "#339933" },
+  { name: "MongoDB", icon: <SiMongodb />, color: "#47A248" },
+  { name: "Firebase", icon: <SiFirebase />, color: "#FFCA28" },
+  { name: "Git", icon: <FaGitAlt />, color: "#F05032" },
+  { name: "Vite", icon: <SiVite />, color: "#646CFF" },
+  { name: "Figma", icon: <FaFigma />, color: "#F24E1E" },
+];
 
 const Skils = () => {
-  const cardItem = [
-    {
-      icon: <FiMonitor className="w-8 h-8 " />,
-      title: "Custom Web Developer",
-      text: "html.css.js.react",
-    },
-    {
-      icon: <FiMonitor className="w-8 h-8" />,
-      title: " Wordpress Web Developer",
-      text: "Elementor",
-    },
-  ];
-
-  const techSkill = [
-    {
-      id: 1,
-      icon: <RiHtml5Line className="skill-icon" />,
-      text: "html",
-      bgColor: "#E54F26",
-      textColor: "#E54F26",
-    },
-    {
-      id: 2,
-      icon: <FaCss3 className="skill-icon" />,
-      text: "css",
-      bgColor: "#0C73B8",
-      textColor: "#0C73B8",
-    },
-    {
-      id: 3,
-      icon: <SiNodedotjs className="skill-icon" />,
-      text: "js",
-      bgColor: "#E7A020",
-      textColor: "#E7A020",
-    },
-    {
-      id: 4,
-      icon: <FaReact className="skill-icon" />,
-      text: "react",
-      bgColor: "#28A9E0",
-      textColor: "#28A9E0",
-    },
-  ];
+  // Triple the list for smooth infinite scrolling
+  const marqueeSkills = [...skillsData, ...skillsData, ...skillsData];
 
   return (
-    <section className="relative section-padding" id="skill">
-      <div className="w-[60%] h-[60%] absolute -bottom-[10%] -left-[30%] rounded-full shadow-[100px] bg-brand-1/60 blur-[250px]"></div>
-      <div className="container mx-auto relative z-10 ">
+    <section className="relative section-padding min-h-screen overflow-hidden" id="skill">
+      <div className="w-[80%] h-[80%] absolute top-0 right-0 rounded-full shadow-[100px] bg-brand-1/10 blur-[300px] -z-10"></div>
+
+      <div className="container mx-auto relative z-10">
         <div className="wrapper">
           <ScrollMouse />
-          {/* Section-title */}
           <SectionHead
-            title={"Skills"}
-            text={"I am striving to never stop learning and improving"}
+            title={"Skills & Tech"}
+            text={"My technical ecosystem and tools I work with"}
           />
-          {/* skill-cards */}
-          <div className="flex flex-col md:flex-row  justify-center items-center gap-[32px]  lg:gap-[152px] ">
-            {cardItem.map((item) => (
-              <div
-                key={item}
-                className=" w-[288px] flex flex-col items-center justify-center gap-2 bg-brand-1 py-[16px] px-[24px] rounded-2xl "
-              >
-                <div> {item.icon} </div>
-                <h5 className="font-second font-normal text-primary-bg text-[24px] leading-8 text-center ">
-                  {item.title}
-                </h5>
-                <p className="font-second font-normal text-[#43454D] text-[16px] leading-[20px] text-center uppercase ">
-                  {item.text}
-                </p>
-              </div>
-            ))}
-          </div>
-          {/* Skill-technology */}
-          <div className="max-w-[960px] mx-auto grid grid-cols-2 lg:grid-cols-4 gap-x-[64px] md:gap-x-[96px] lg:gap-x-[128px] gap-y-[32px] pt-[90px] ">
-            {techSkill.map((item, index) => (
-              <div
-                key={index}
-                className="flex flex-col items-center justify-center gap-6 "
-              >
+
+          {/* MARQUEE SECTION */}
+          <div className="relative w-full overflow-hidden py-10 mb-20 group">
+            {/* Gradient Masks for smooth fade out at edges */}
+            <div className="absolute inset-y-0 left-0 w-20 md:w-40 bg-gradient-to-r from-primary-bg to-transparent z-20 pointer-events-none"></div>
+            <div className="absolute inset-y-0 right-0 w-20 md:w-40 bg-gradient-to-l from-primary-bg to-transparent z-20 pointer-events-none"></div>
+
+            <motion.div
+              className="flex gap-8 md:gap-16 w-max"
+              animate={{ x: ["0%", "-50%"] }}
+              transition={{
+                duration: 40,
+                repeat: Infinity,
+                ease: "linear",
+              }}
+            >
+              {marqueeSkills.map((skill, index) => (
                 <div
-                  className={` p-6 md:p-[40px]  rounded-full`}
-                  style={{ backgroundColor: item.bgColor }}
+                  key={`${skill.name}-${index}`}
+                  className="flex flex-col items-center justify-center gap-4 transition-all duration-300 hover:scale-110 cursor-pointer"
                 >
-                  {item.icon}
+                  <div
+                    className="text-5xl md:text-7xl drop-shadow-[0_0_15px_rgba(255,255,255,0.1)]"
+                    style={{ color: skill.color }}
+                  >
+                    {skill.icon}
+                  </div>
+                  <span className="font-second text-primary/80 text-sm md:text-base font-medium">
+                    {skill.name}
+                  </span>
                 </div>
-                <p
-                  className={`font-second font-medium text-[32px] leading-[42px] uppercase`}
-                  style={{ color: item.textColor }}
-                >
-                  {item.text}
-                </p>
-              </div>
-            ))}
+              ))}
+            </motion.div>
           </div>
+
+          {/* BENTO GRID - Top Picks */}
+          <div className="mt-20">
+            <h3 className="font-primary text-3xl md:text-4xl text-white text-center mb-12">
+              Core <span className="text-brand-1">Stack</span>
+            </h3>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+              {/* React Card - Large Item */}
+              <motion.div
+                whileHover={{ y: -5 }}
+                className="md:col-span-2 bg-gradient-to-br from-[#1c1c22] to-[#131318] border border-white/5 rounded-3xl p-8 flex items-center justify-between group overflow-hidden relative"
+              >
+                <div className="z-10 bg-black/40 p-4 rounded-xl backdrop-blur-sm self-end">
+                  <h4 className="font-primary text-2xl text-white mb-2">Frontend Mastery</h4>
+                  <p className="font-second text-gray-400 text-sm">React, Next.js, Tailwind CSS</p>
+                </div>
+                <FaReact className="text-[150px] text-[#61DAFB]/10 absolute -right-10 -bottom-10 group-hover:scale-110 transition-transform duration-500" />
+                <SiNextdotjs className="text-[120px] text-white/5 absolute top-10 right-20 group-hover:rotate-12 transition-transform duration-500" />
+              </motion.div>
+
+              {/* Backend Card */}
+              <motion.div
+                whileHover={{ y: -5 }}
+                className="bg-gradient-to-bl from-[#1c1c22] to-[#131318] border border-white/5 rounded-3xl p-8 flex flex-col justify-between group overflow-hidden relative"
+              >
+                <FaNodeJs className="text-[100px] text-[#339933]/10 absolute -right-4 -top-4" />
+                <div className="z-10 mt-auto">
+                  <h4 className="font-primary text-xl text-white mb-1">Backend</h4>
+                  <p className="font-second text-gray-400 text-sm">Node.js, Express, MongoDB</p>
+                </div>
+              </motion.div>
+
+              {/* Tools Card */}
+              <motion.div
+                whileHover={{ y: -5 }}
+                className="bg-gradient-to-tr from-[#1c1c22] to-[#131318] border border-white/5 rounded-3xl p-8 flex flex-col justify-between group overflow-hidden relative"
+              >
+                <div className="flex gap-4 text-4xl text-gray-600">
+                  <TbBrandVscode className="group-hover:text-[#007ACC] transition-colors" />
+                  <FaGitAlt className="group-hover:text-[#F05032] transition-colors" />
+                  <FaFigma className="group-hover:text-[#F24E1E] transition-colors" />
+                </div>
+                <div className="z-10 mt-12">
+                  <h4 className="font-primary text-xl text-white mb-1">Tools</h4>
+                  <p className="font-second text-gray-400 text-sm">VS Code, Git, Figma</p>
+                </div>
+              </motion.div>
+
+              {/* Deployment Card - Large Item */}
+              <motion.div
+                whileHover={{ y: -5 }}
+                className="md:col-span-2 bg-gradient-to-r from-[#1c1c22] to-[#131318] border border-white/5 rounded-3xl p-8 flex items-center justify-between group overflow-hidden relative"
+              >
+                <div className="flex gap-6 z-10">
+                  <div className="text-center">
+                    <SiVercel className="text-4xl text-white mb-2 mx-auto" />
+                    <span className="font-second text-xs text-gray-500">Vercel</span>
+                  </div>
+                  <div className="text-center">
+                    <SiNetlify className="text-4xl text-[#00C7B7] mb-2 mx-auto" />
+                    <span className="font-second text-xs text-gray-500">Netlify</span>
+                  </div>
+                </div>
+                <div className="z-10 text-right">
+                  <h4 className="font-primary text-2xl text-white mb-2">Deployment</h4>
+                  <p className="font-second text-gray-400 text-sm">Fast, secure, & scalable shipping</p>
+                </div>
+                <div className="absolute inset-0 bg-brand-1/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </motion.div>
+
+            </div>
+          </div>
+
         </div>
       </div>
     </section>

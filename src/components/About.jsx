@@ -1,6 +1,7 @@
 import React from "react";
 import { LuMouse } from "react-icons/lu";
 import ScrollMouse from "./animation/Scroll";
+import { motion } from "motion/react";
 
 const About = () => {
   return (
@@ -12,12 +13,24 @@ const About = () => {
             <ScrollMouse />
           </div>
           {/* Head */}
-          <h1 className="w-fit md:max-w-[367px] font-primary font-normal text-primary text-[32px] md:text-[64px] leading-[36px] md:leading-[72px] px-8 md:px-[40px] py-[16px] border-4 border-brand-1 rounded-tl-[30px] rounded-br-[30px] md:rounded-tl-[50px] md:rounded-br-[50px] bg-primary-bg mb-16 mx-auto md:mx-0 text-center">
+          <motion.h1
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="w-fit md:max-w-[367px] font-primary font-normal text-primary text-[32px] md:text-[64px] leading-[36px] md:leading-[72px] px-8 md:px-[40px] py-[16px] border-4 border-brand-1 rounded-tl-[30px] rounded-br-[30px] md:rounded-tl-[50px] md:rounded-br-[50px] bg-primary-bg mb-16 mx-auto md:mx-0 text-center"
+          >
             About Me
-          </h1>
-          <div className="grid grid-cols-1 lg:grid-cols-[2fr_auto] justify-items-center items-stretch gap-10 z-100">
+          </motion.h1>
+          <div className="grid grid-cols-1 lg:grid-cols-[2fr_auto] justify-items-center items-center gap-10 z-100">
             {/* Left side-about description */}
-            <div className="order-2 lg:order-0">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="order-2 lg:order-0"
+            >
               {/* Description */}
               <div className="px-[24px] md:px-[40px] py-[58px] bg-cardBG/95 shadow-white/5 shadow-md rounded-3xl">
                 <p className="tag-style"> {"<p>"} </p>
@@ -42,15 +55,21 @@ const About = () => {
                 </p>
                 <p className="tag-style"> {"</p>"} </p>
               </div>
-            </div>
+            </motion.div>
             {/* right side - image */}
-            <div className="order-0 lg:order-2">
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              viewport={{ once: true }}
+              className="order-0 lg:order-2"
+            >
               <img
                 src="/image/rahatHridoy_about.jpg"
                 alt="image"
                 className="w-[272px] md:w-full h-[450px] rounded-3xl object-cover object-center overflow-hidden  "
               />
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>
