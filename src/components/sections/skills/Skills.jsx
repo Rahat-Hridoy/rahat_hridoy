@@ -47,7 +47,7 @@ const Skils = () => {
   const marqueeSkills = [...skillsData, ...skillsData, ...skillsData];
 
   return (
-    <section className="relative section-padding min-h-screen overflow-hidden" id="skill">
+    <section className="relative section-padding overflow-hidden" id="skill">
       <div className="w-[80%] h-[80%] absolute top-0 right-0 rounded-full shadow-[100px] bg-brand-1/10 blur-[300px] -z-10"></div>
 
       <div className="container mx-auto relative z-10">
@@ -59,7 +59,7 @@ const Skils = () => {
           />
 
           {/* MARQUEE SECTION */}
-          <div className="relative w-full overflow-hidden py-10 mb-20 group">
+          <div className="relative w-full overflow-hidden py-10 group">
             {/* Gradient Masks for smooth fade out at edges */}
             <div className="absolute inset-y-0 left-0 w-20 md:w-40 bg-gradient-to-r from-primary-bg to-transparent z-20 pointer-events-none"></div>
             <div className="absolute inset-y-0 right-0 w-20 md:w-40 bg-gradient-to-l from-primary-bg to-transparent z-20 pointer-events-none"></div>
