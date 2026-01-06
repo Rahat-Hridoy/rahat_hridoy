@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { CiLinkedin } from "react-icons/ci";
 import { FaGithub } from "react-icons/fa";
 import { ImReddit } from "react-icons/im";
@@ -45,7 +46,7 @@ const Footer = () => {
           {/* Credit */}
           <div className=" order-3 lg:order-3 ">
             <p className="font-primary font-light text-primary text-[16px] leading-[18px] ">
-              Design By: <span className="text-brand-1">Rahat</span>
+              Design By: <Link to="/dashboard" className="text-brand-1 hover:underline">Rahat</Link>
             </p>
           </div>
         </div>

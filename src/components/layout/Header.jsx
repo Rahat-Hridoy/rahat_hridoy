@@ -1,4 +1,5 @@
 import { CiLinkedin, CiSearch } from "react-icons/ci";
+import { Link } from "react-router-dom";
 import { FaGithub } from "react-icons/fa";
 import { RiRedditLine } from "react-icons/ri";
 
@@ -21,10 +22,13 @@ const Header = () => {
             {/* nav-list */}
             <ul className="flex items-center justify-between gap-x-[16px] md:gap-x-[32px]">
               <li className={`nav-list text-primary hover:cursor-pointer `}>
-                <a href="#home">Home</a>
+                <Link to="/">Home</Link>
               </li>
               <li className={`nav-list text-primary hover:cursor-pointer  `}>
                 <a href="#project">Projects</a>
+              </li>
+              <li className={`nav-list text-primary hover:cursor-pointer  `}>
+                <Link to="/blog">Blog</Link>
               </li>
             </ul>
             {/* search */}
