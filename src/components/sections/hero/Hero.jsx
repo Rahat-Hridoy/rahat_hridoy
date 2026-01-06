@@ -158,71 +158,89 @@ const Hero = () => {
           <div className="grid grid-cols-1 space-y-16 space-x-0 md:space-x-8 lg:grid-cols-[auto_1fr] xl:grid-cols-[1fr_auto_1fr]   justify-items-center place-items-center">
             {/* left-side: information  */}
             <div className="perspective-1000">
-              <TiltCard className="lg:col-span-2 xl:col-span-1 w-[320px] h-[520px] border-4 border-primary px-[22px] py-[36px] rounded-tl-[160px] rounded-br-[160px] relative bg-cardBG/50 backdrop-blur-md shadow-[0_0_30px_rgba(0,0,0,0.5)]">
-                <div>
-                  {/* profile */}
-                  <div>
-                    <div className="flex flex-col justify-center items-center gap-[16px] ">
-                      <motion.img
-                        animate={{ y: [0, -10, 0] }}
-                        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                        src="/image/rahatHridoy.jpeg"
-                        alt="image"
-                        className="w-[90px] h-[90px] rounded-full border-4 border-brand-1 shadow-lg"
-                      />
-                    </div>
-                    <h3 className="font-second font-medium text-primary text-xl leading-[42px] text-center text-shadow-sm">
-                      Md Rahatul Islam
-                    </h3>
-                    <h5 className="font-second font-normal text-primary text-sm leading-[18px] text-center opacity-80">
-                      Full-stack Developer{" "}
-                    </h5>
-                  </div>
-                  {/* information */}
-                  <div>
-                    <ul className="py-[32px] flex flex-col justify-center items-start gap-y-[16px] ">
-                      {info.map((item) => (
-                        <li
-                          key={item.id}
-                          className="flex items-center justify-start gap-4 "
-                        >
-                          <span className="text-brand-1 w-[14px] h-[14px] ">
-                            {item.icon}
-                          </span>
+              {/* Full Card with Movable Border - Static (No Tilt) */}
+              <div className="lg:col-span-2 xl:col-span-1 w-[320px] h-[520px] rounded-tl-[160px] rounded-br-[160px] relative bg-transparent shadow-[0_0_30px_rgba(0,0,0,0.5)]">
+                {/* Container to clip the gradient */}
+                <div className="w-full h-full relative rounded-tl-[160px] rounded-br-[160px] overflow-hidden group">
 
-                          <span className="pera-text text-sm leading-[18px]  ">
-                            {item.text}
+                  {/* Spinning Gradient Layer */}
+                  <div className="absolute inset-[-50%] bg-[conic-gradient(from_0deg,#12f7d6,#00ccff,#ff00ff,#12f7d6)] animate-spin-slow opacity-100"></div>
+
+                  {/* Content Mask (Inset to show border) */}
+                  <div className="absolute inset-[4px] bg-cardBG rounded-tl-[156px] rounded-br-[156px] flex flex-col items-center px-[22px] py-[36px] h-[calc(100%-8px)] w-[calc(100%-8px)]">
+                    <div>
+                      {/* profile */}
+                      <div>
+                        <div className="flex flex-col justify-center items-center gap-[16px]">
+                          <div className="relative group">
+                            {/* Spinning Gradient Border */}
+                            <div className="absolute -inset-[3px] rounded-full bg-[conic-gradient(from_0deg,#12f7d6,#00ccff,#ff00ff,#12f7d6)] animate-spin-slow blur-sm opacity-70"></div>
+
+                            {/* Static Image with solid background to hide the center of the gradient */}
+                            <div className="relative rounded-full p-[3px] bg-cardBG">
+                              <img
+                                src="/image/rahatHridoy.jpeg"
+                                alt="image"
+                                className="w-[90px] h-[90px] rounded-full object-cover border-2 border-transparent"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                        <h3 className="font-second font-medium text-primary text-xl leading-[42px] text-center text-shadow-sm">
+                          Md Rahatul Islam
+                        </h3>
+                        <h5 className="font-second font-normal text-primary text-sm leading-[18px] text-center opacity-80">
+                          Full-stack Developer{" "}
+                        </h5>
+                      </div>
+                      {/* information */}
+                      <div>
+                        <ul className="py-[32px] flex flex-col justify-center items-start gap-y-[16px] ">
+                          {info.map((item) => (
+                            <li
+                              key={item.id}
+                              className="flex items-center justify-start gap-4 "
+                            >
+                              <span className="text-brand-1 w-[14px] h-[14px] ">
+                                {item.icon}
+                              </span>
+
+                              <span className="pera-text text-sm leading-[18px]  ">
+                                {item.text}
+                              </span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      {/* skills */}
+                      <div className="flex items-center justify-start gap-3 pb-8 flex-wrap  ">
+                        {skills.map((skill) => (
+                          <span
+                            key={skill.id}
+                            className="pera-text !text-black text-sm leading-[18px] px-2 bg-brand-1 rounded-full shadow-[0_0_10px_rgba(18,247,214,0.3)]"
+                          >
+                            {skill}
                           </span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  {/* skills */}
-                  <div className="flex items-center justify-start gap-3 pb-8 flex-wrap  ">
-                    {skills.map((skill) => (
-                      <span
-                        key={skill.id}
-                        className="pera-text !text-black text-sm leading-[18px] px-2 bg-brand-1 rounded-full shadow-[0_0_10px_rgba(18,247,214,0.3)]"
+                        ))}
+                      </div>
+                    </div>
+                    {/* CV button */}
+                    <div className="w-full flex justify-start mt-2 ">
+                      <a
+                        href="/document/MD-RAHATUL-ISLAM-resume-post-web-designer.pdf"
+                        target="_blank"
+                        className="w-fit scale-90"
                       >
-                        {skill}
-                      </span>
-                    ))}
+                        <Btn
+                          text={"Download CV"}
+                          icon={PiDownloadSimpleBold}
+                          color={"bg-primary hover:bg-primary/90 active:bg-primary"}
+                        />
+                      </a>
+                    </div>
                   </div>
                 </div>
-                {/* CV button */}
-                <div className="">
-                  <a
-                    href="/document/MD-RAHATUL-ISLAM-resume-post-web-designer.pdf"
-                    target="_blank"
-                  >
-                    <Btn
-                      text={"Download CV"}
-                      icon={PiDownloadSimpleBold}
-                      color={"bg-primary hover:bg-primary/90 active:bg-primary"}
-                    />
-                  </a>
-                </div>
-              </TiltCard>
+              </div>
             </div>
 
 
@@ -290,8 +308,8 @@ const Hero = () => {
             </motion.div>
           </div>
         </div>
-      </div>
-    </section>
+      </div >
+    </section >
   );
 };
 

@@ -43,6 +43,7 @@ const TiltCard = ({ children, className }) => {
                     transform: "translateZ(20px)",
                     transformStyle: "preserve-3d"
                 }}
+                className="w-full h-full"
             >
                 {children}
             </div>

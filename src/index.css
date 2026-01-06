@@ -9,9 +9,11 @@
     0% {
       background-position: 0% 50%;
     }
+
     50% {
       background-position: 100% 50%;
     }
+
     100% {
       background-position: 0% 50%;
     }
@@ -26,12 +28,24 @@
       background-position: -200% 0;
     }
   }
+
   @keyframes scroll {
     0% {
       transform: translateY(0%);
     }
+
     100% {
       transform: translateY(-80%);
+    }
+  }
+
+  @keyframes spin-slow {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
     }
   }
 }
@@ -43,8 +57,13 @@
 .animate-gradient {
   animation: gradient linear infinite;
 }
+
 .animate-shine {
   animation: shine 8s linear infinite;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 4s linear infinite;
 }
 
 :root {
@@ -86,23 +105,29 @@ html {
 .nav-menu-social {
   @apply font-second font-normal text-[16px] text-primary leading-[20px] hover:text-brand-1;
 }
+
 .nav-list {
-  @apply font-second font-normal  text-[16px] lg:text-[24px] leading-[20px] lg:leading-[32px] hover:text-brand-1;
+  @apply font-second font-normal text-[16px] lg:text-[24px] leading-[20px] lg:leading-[32px] hover:text-brand-1;
 }
+
 .pera-text {
   @apply font-second font-normal text-primary;
 }
+
 .tag-style {
   @apply font-second font-normal text-sm text-brand-1 leading-[18px];
 }
+
 .intro-text {
   @apply font-primary font-normal text-primary text-[32px] leading-[36px] md:text-[64px] md:leading-[72px];
 }
+
 .skill-icon {
   @apply w-16 h-16 text-primary duration-300 hover:scale-110;
 }
+
 .form-input-box {
-  @apply outline-none font-second font-light text-primary text-[16px] leading-[24px] placeholder:font-primary placeholder:font-light placeholder:text-white/50  w-full py-4 px-3 border-1  border-brand-1/50 rounded-tr-2xl rounded-bl-2xl focus:border-2  focus:placeholder-transparent focus:bg-black/10 focus:shadow-lg;
+  @apply outline-none font-second font-light text-primary text-[16px] leading-[24px] placeholder:font-primary placeholder:font-light placeholder:text-white/50 w-full py-4 px-3 border-1 border-brand-1/50 rounded-tr-2xl rounded-bl-2xl focus:border-2 focus:placeholder-transparent focus:bg-black/10 focus:shadow-lg;
 }
 
 /* Custom Scrollbar */
