@@ -75,12 +75,20 @@ export const DataProvider = ({ children }) => {
         setBlogs([newBlog, ...blogs]);
     };
 
+    const deleteBlog = (id) => {
+        setBlogs(blogs.filter(blog => blog.id !== id));
+    };
+
     const addProject = (newProject) => {
         setProjects([newProject, ...projects]);
     };
 
+    const deleteProject = (id) => {
+        setProjects(projects.filter(project => project.id !== id));
+    };
+
     return (
-        <DataContext.Provider value={{ blogs, projects, addBlog, addProject }}>
+        <DataContext.Provider value={{ blogs, projects, addBlog, deleteBlog, addProject, deleteProject }}>
             {children}
         </DataContext.Provider>
     );
