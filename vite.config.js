@@ -11,4 +11,15 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ["react", "react-dom", "react-router-dom"],
+          animations: ["gsap", "motion", "@gsap/react"],
+          ui: ["lucide-react", "react-icons"],
+        },
+      },
+    },
+  },
 });

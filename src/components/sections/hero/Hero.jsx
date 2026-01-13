@@ -179,7 +179,7 @@ const Hero = () => {
                             {/* Static Image with solid background to hide the center of the gradient */}
                             <div className="relative rounded-full p-[3px] bg-cardBG">
                               <img
-                                src="/image/rahatHridoy.jpeg"
+                                src="/image/rahatHridoy.webp"
                                 alt="image"
                                 className="w-[90px] h-[90px] rounded-full object-cover border-2 border-transparent"
                               />

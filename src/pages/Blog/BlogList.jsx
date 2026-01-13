@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import BlogCard from "./BlogCard";
-import SectionHead from "../../common/SectionHead";
-import { useData } from "../../../context/DataContext";
+import BlogCard from "../../components/sections/blog/BlogCard";
+import SectionHead from "../../components/common/SectionHead";
+import { useData } from "../../context/DataContext";
 
 const BlogList = () => {
     const { blogs: blogData } = useData();
@@ -34,7 +34,7 @@ const BlogList = () => {
         <section className="section-padding min-h-screen pt-32 bg-sectionBG" id="blog">
             <div className="container mx-auto max-w-5xl">
                 {/* Header & Subscribe */}
-                <div id="blog-header" className="wrapper mb-16 text-center">
+                <div id="blog-header" className="wrapper mt-32 mb-8 text-center">
                     <SectionHead
                         title="Blogs"
                         text="My thoughts on technology and business, welcome to subscribe"

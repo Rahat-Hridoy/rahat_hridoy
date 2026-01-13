@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { Heart, MessageSquare, ArrowLeft, Send, Calendar, Share2 } from "lucide-react";
-import SectionHead from "../components/common/SectionHead";
-import { useData } from "../context/DataContext";
+import SectionHead from "../../components/common/SectionHead";
+import { useData } from "../../context/DataContext";
 
 const BlogDetail = () => {
     const { id } = useParams();
@@ -61,7 +61,7 @@ const BlogDetail = () => {
 
     return (
         <section className="min-h-screen bg-sectionBG pt-28 pb-16 px-4">
-            <div className="container mx-auto max-w-4xl">
+            <div className="container mx-auto max-w-4xl mt-10">
                 <Link
                     to="/blog"
                     className="inline-flex items-center gap-2 text-gray-400 hover:text-brand-1 mb-8 transition-colors"
