@@ -42,25 +42,23 @@ const ProjectCard = ({ cardContent }) => {
         </div>
 
         {/* Buttons */}
-        <div className="flex items-center gap-4 pt-4 border-t border-white/10">
+        <div className="flex items-center justify-between gap-4 pt-4 border-t border-white/10">
           <a
             href={cardContent.github}
             target="_blank"
             rel="noreferrer"
-            className="flex items-center gap-2 text-sm text-gray-400 hover:text-white transition-colors"
+            className="flex items-center gap-2 px-4 py-2 rounded-lg bg-brand-1 text-black font-bold font-second text-sm hover:bg-white transition-all shadow-lg shadow-brand-1/20 hover:shadow-brand-1/40"
             title="View Source Code"
           >
-            <FaGithub size={18} />
-            <span className="font-second hover:underline">Code</span>
+            <FaGithub size={18} /> Code
           </a>
-          <div className="flex-1"></div>
           <a
             href={cardContent.liveurl}
             target="_blank"
             rel="noreferrer"
             className="flex items-center gap-2 px-4 py-2 rounded-lg bg-brand-1 text-black font-bold font-second text-sm hover:bg-white transition-all shadow-lg shadow-brand-1/20 hover:shadow-brand-1/40"
           >
-            Live Demo <FaExternalLinkAlt size={14} />
+            Live Link <FaExternalLinkAlt size={14} />
           </a>
         </div>
       </div>
