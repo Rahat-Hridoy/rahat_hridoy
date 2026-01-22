@@ -16,7 +16,9 @@ const Login = () => {
 
         // Mock authentication
         setTimeout(() => {
-            if (password === '1234') {
+            const envPassword = import.meta.env.VITE_DASHBOARD_PASSWORD;
+
+            if (password === envPassword) {
                 localStorage.setItem('isAuthenticated', 'true');
                 navigate('/dashboard');
             } else {
@@ -27,7 +29,7 @@ const Login = () => {
     };
 
     return (
-        <div className="min-h-screen bg-primary-bg font-primary flex items-center justify-center p-4 relative overflow-hidden">
+        <div className="min-h-screen bg-primary-bg  font-primary flex items-center justify-center p-4 relative overflow-hidden">
             {/* Ambient Background */}
             <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
                 <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-brand-1/10 rounded-full blur-[100px]" />
@@ -38,11 +40,11 @@ const Login = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
-                className="w-full max-w-md relative z-10"
+                className="w-full max-w-lg relative z-10"
             >
-                <div className="bg-cardBG/80 backdrop-blur-xl border border-brand-1/20 rounded-2xl p-8 shadow-2xl shadow-brand-1/5">
+                <div className="bg-cardBG/80 backdrop-blur-xl border border-brand-1/20 rounded-2xl p-8 shadow-2xl shadow-brand-1/5 max-w-[500px] mx-auto">
                     <div className="text-center mb-8">
-                        <h1 className="text-3xl font-bold text-white mb-2">Welcome Back</h1>
+                        <h1 className="text-3xl font-bold text-white mb-2">Welcome</h1>
                         <p className="font-second text-gray-400 text-sm">Enter your credentials to access the dashboard</p>
                     </div>
 
