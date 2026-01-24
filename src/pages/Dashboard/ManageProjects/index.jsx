@@ -8,86 +8,48 @@ import Modal from '../../../components/common/Modal';
 
 const ManageProjects = () => {
     const { projects, addProject, deleteProject, updateProject } = useData();
+    const [editingProject, setEditingProject] = useState(null);
     const [showForm, setShowForm] = useState(false);
-    const [isEditing, setIsEditing] = useState(false);
-    const [formData, setFormData] = useState({
-        title: '',
-        text: '',
-        img: '',
-        projectTech: '',
-        github: '',
-        liveurl: ''
-    });
 
     // View and Filter State
     const [viewMode, setViewMode] = useState('list'); // 'grid' | 'list'
     const [sortBy, setSortBy] = useState('newest'); // 'newest' | 'oldest' | 'name'
     const [searchQuery, setSearchQuery] = useState('');
 
-    const handleDelete = (id) => {
+    const handleDelete = async (id) => {
         if (confirm('Are you sure you want to delete this project?')) {
-            deleteProject(id);
+            try {
+                await deleteProject(id);
+            } catch (error) {
+                alert("Failed to delete project");
+            }
         }
-    };
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        
-        if (isEditing) {
-            const updatedProject = {
-                ...formData,
-                projectTech: Array.isArray(formData.projectTech) ? formData.projectTech : formData.projectTech.split(',').map(tech => tech.trim()),
-                img: formData.img || "https://placehold.co/600x400/001e2b/12f7d6?text=Project+Image"
-            };
-            updateProject(updatedProject);
-        } else {
-             const newProject = {
-                id: Date.now(),
-                ...formData,
-                projectTech: formData.projectTech.split(',').map(tech => tech.trim()),
-                img: formData.img || "https://placehold.co/600x400/001e2b/12f7d6?text=Project+Image" 
-            };
-            addProject(newProject);
-        }
-       
-        setShowForm(false);
-        setIsEditing(false);
-        setFormData({ title: '', text: '', img: '', projectTech: '', github: '', liveurl: '' });
     };
 
     const handleEdit = (project) => {
-        setFormData({
-            ...project,
-            projectTech: project.projectTech.join(', ') // Convert array back to string for input
-        });
-        setIsEditing(true);
+        setEditingProject(project);
         setShowForm(true);
     };
 
-    const handleChange = (e) => {
-        const { name, value, files } = e.target;
-        if (files && files.length > 0) {
-            const file = files[0];
-            const reader = new FileReader();
-            reader.onloadend = () => {
-                setFormData(prev => ({ ...prev, [name]: reader.result }));
-            };
-            reader.readAsDataURL(file);
-        } else {
-            setFormData(prev => ({ ...prev, [name]: value }));
-        }
+    const handleSuccess = () => {
+        setShowForm(false);
+        setEditingProject(null);
     };
 
     // Filter and Sort Projects
     const filteredProjects = projects
         .filter(project => {
             const matchesSearch = project.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                project.projectTech.some(t => t.toLowerCase().includes(searchQuery.toLowerCase()));
+                (Array.isArray(project.tech) && project.tech.some(t => t.toLowerCase().includes(searchQuery.toLowerCase())));
             return matchesSearch;
         })
         .sort((a, b) => {
-            if (sortBy === 'newest') return b.id - a.id;
-            if (sortBy === 'oldest') return a.id - b.id;
+            if (sortBy === 'newest') {
+                return new Date(b.created_at || b.id) - new Date(a.created_at || a.id);
+            }
+            if (sortBy === 'oldest') {
+                return new Date(a.created_at || a.id) - new Date(b.created_at || b.id);
+            }
             if (sortBy === 'name') return a.title.localeCompare(b.title);
             return 0;
         });
@@ -101,7 +63,7 @@ const ManageProjects = () => {
                 </div>
 
                 <button
-                    onClick={() => setShowForm(!showForm)}
+                    onClick={() => { setShowForm(!showForm); setEditingProject(null); }}
                     className="flex items-center gap-2 bg-brand-1 text-black px-4 py-2 rounded-lg font-bold hover:bg-white transition-colors"
                 >
                     {showForm ? <><X size={20} /> Cancel</> : <><Plus size={20} /> Add Project</>}
@@ -166,21 +128,17 @@ const ManageProjects = () => {
                 isOpen={showForm}
                 onClose={() => {
                     setShowForm(false);
-                    setIsEditing(false);
-                    setFormData({ title: '', text: '', img: '', projectTech: '', github: '', liveurl: '' });
+                    setEditingProject(null);
                 }}
-                title={isEditing ? 'Edit Project' : 'Add New Project'}
+                title={editingProject ? 'Edit Project' : 'Add New Project'}
             >
                 <ProjectForm
-                    formData={formData}
-                    handleChange={handleChange}
-                    handleSubmit={handleSubmit}
+                    editingProject={editingProject}
+                    onSuccess={handleSuccess}
                     onCancel={() => {
                         setShowForm(false);
-                        setIsEditing(false);
-                        setFormData({ title: '', text: '', img: '', projectTech: '', github: '', liveurl: '' });
+                        setEditingProject(null);
                     }}
-                    isEditing={isEditing}
                 />
             </Modal>
 

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ProjectGridView = ({ projects, handleDelete, handleEdit }) => {
+const ProjectGridView = ({ projects, handleEdit, handleDelete }) => {
     return (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {projects.map((project) => (
@@ -28,16 +28,17 @@ const ProjectGridView = ({ projects, handleDelete, handleEdit }) => {
                     </button>
 
                     <div className="h-48 overflow-hidden">
-                        <img src={project.img} alt={project.title} className="w-full h-full object-cover" />
+                        <img src={project.image} alt={project.title} className="w-full h-full object-cover" />
                     </div>
                     <div className="p-4">
                         <h3 className="font-bold text-white mb-2 text-xl">{project.title}</h3>
                         <div className="flex flex-wrap gap-2 mb-3">
-                            {project.projectTech.slice(0, 3).map((tech, i) => (
-                                <span key={i} className="text-xs bg-white/5 px-2 py-1 rounded text-brand-1 border border-brand-1/20">{tech}</span>
+                            {/* Check if tech is array before mapping */}
+                            {Array.isArray(project.tech) && project.tech.slice(0, 3).map((t, i) => (
+                                <span key={i} className="text-xs bg-white/5 px-2 py-1 rounded text-brand-1 border border-brand-1/20">{t}</span>
                             ))}
                         </div>
-                        <p className="text-gray-400 text-sm line-clamp-2">{project.text}</p>
+                        <p className="text-gray-400 text-sm line-clamp-2">{project.description}</p>
                     </div>
                 </div>
             ))}

@@ -122,6 +122,10 @@ html {
   scroll-behavior: smooth;
 }
 
+button {
+  @apply cursor-pointer;
+}
+
 .section-padding {
   @apply py-[32px] lg:py-[64px];
 }

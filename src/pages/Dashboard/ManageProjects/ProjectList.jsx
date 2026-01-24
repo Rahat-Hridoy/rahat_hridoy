@@ -28,16 +28,16 @@ const ProjectList = ({ projects, handleDelete, handleEdit }) => {
                     </button>
 
                     <div className="w-32 h-24 flex-shrink-0 overflow-hidden">
-                        <img src={project.img} alt={project.title} className="w-full h-full object-cover" />
+                        <img src={project.image || "https://placehold.co/600x400/001e2b/12f7d6?text=No+Image"} alt={project.title} className="w-full h-full object-cover" />
                     </div>
                     <div className="flex-1">
                         <h3 className="font-bold text-white mb-2 text-lg">{project.title}</h3>
                         <div className="flex flex-wrap gap-2 mb-3">
-                            {project.projectTech.slice(0, 3).map((tech, i) => (
+                            {Array.isArray(project.tech) && project.tech.slice(0, 3).map((tech, i) => (
                                 <span key={i} className="text-xs bg-white/5 px-2 py-1 rounded text-brand-1 border border-brand-1/20">{tech}</span>
                             ))}
                         </div>
-                        <p className="text-gray-400 text-sm line-clamp-2">{project.text}</p>
+                        <p className="text-gray-400 text-sm line-clamp-2">{project.description}</p>
                     </div>
                 </div>
             ))}

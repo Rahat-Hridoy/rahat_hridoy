@@ -27,9 +27,9 @@ const Header = () => {
               <li className={`nav-list text-primary hover:cursor-pointer  `}>
                 <a href="#project">Projects</a>
               </li>
-              <li className={`nav-list text-primary hover:cursor-pointer  `}>
+              {/* <li className={`nav-list text-primary hover:cursor-pointer  `}>
                 <Link to="/blog">Blog</Link>
-              </li>
+              </li> */}
             </ul>
             {/* search */}
             {/* <div className="flex items-center bg-transparent lg:bg-primary rounded-full py-[6px] px-0 md:px-[16px] mx-[32px] 2xl:mx-[64px] ">
