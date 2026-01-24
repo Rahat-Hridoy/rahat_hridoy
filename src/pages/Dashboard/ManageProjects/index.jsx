@@ -7,13 +7,13 @@ import ProjectGridView from './ProjectGridView';
 import Modal from '../../../components/common/Modal';
 
 const ManageProjects = () => {
-    const { projects, addProject, deleteProject, updateProject } = useData();
+    const { projects, addProject, deleteProject, updateProject, reorderProjectList } = useData();
     const [editingProject, setEditingProject] = useState(null);
     const [showForm, setShowForm] = useState(false);
 
     // View and Filter State
     const [viewMode, setViewMode] = useState('list'); // 'grid' | 'list'
-    const [sortBy, setSortBy] = useState('newest'); // 'newest' | 'oldest' | 'name'
+    const [sortBy, setSortBy] = useState('manual'); // 'manual' | 'newest' | 'oldest' | 'name'
     const [searchQuery, setSearchQuery] = useState('');
 
     const handleDelete = async (id) => {
@@ -44,6 +44,7 @@ const ManageProjects = () => {
             return matchesSearch;
         })
         .sort((a, b) => {
+            if (sortBy === 'manual') return (a.sort_order || 0) - (b.sort_order || 0);
             if (sortBy === 'newest') {
                 return new Date(b.created_at || b.id) - new Date(a.created_at || a.id);
             }
@@ -53,6 +54,15 @@ const ManageProjects = () => {
             if (sortBy === 'name') return a.title.localeCompare(b.title);
             return 0;
         });
+    
+    // Only allow reordering if: List View, No Search, Manual Sort
+    const isReorderEnabled = viewMode === 'list' && !searchQuery && sortBy === 'manual';
+
+    const handleReorder = (newOrder) => {
+        if (isReorderEnabled) {
+            reorderProjectList(newOrder);
+        }
+    };
 
     return (
         <div>
@@ -95,6 +105,7 @@ const ManageProjects = () => {
                             onChange={(e) => setSortBy(e.target.value)}
                             className="bg-sectionBG border border-white/10 rounded-lg py-2 px-3 focus:border-brand-1 outline-none text-white cursor-pointer hover:bg-white/5 transition-colors"
                         >
+                            <option value="manual">Manual Order (Drag)</option>
                             <option value="newest">Newest</option>
                             <option value="oldest">Oldest</option>
                             <option value="name">Name (A-Z)</option>
@@ -145,7 +156,12 @@ const ManageProjects = () => {
             {/* Projects List */}
             {filteredProjects.length > 0 ? (
                 viewMode === 'list' ? (
-                     <ProjectList projects={filteredProjects} handleDelete={handleDelete} handleEdit={handleEdit} />
+                     <ProjectList 
+                        projects={filteredProjects} 
+                        handleDelete={handleDelete} 
+                        handleEdit={handleEdit}
+                        onReorder={isReorderEnabled ? handleReorder : undefined}
+                    />
                 ) : (
                     <ProjectGridView projects={filteredProjects} handleDelete={handleDelete} handleEdit={handleEdit} />
                 )

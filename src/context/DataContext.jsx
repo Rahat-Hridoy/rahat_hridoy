@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import blogData from '../data/blogData';
-import { getProjects, createProject as apiCreateProject, updateProject as apiUpdateProject, deleteProject as apiDeleteProject } from '../lib/projects';
+import { getProjects, createProject as apiCreateProject, updateProject as apiUpdateProject, deleteProject as apiDeleteProject, reorderProjects as apiReorderProjects } from '../lib/projects';
 
 const DataContext = createContext();
 
@@ -58,7 +58,10 @@ export const DataProvider = ({ children }) => {
         try {
             const savedProject = await apiCreateProject(newProject);
             if (savedProject) {
-                setProjects([savedProject, ...projects]);
+                setProjects(prev => [...prev, savedProject]); // Add to end or refresh
+                // Ideally refresh to get new sort order or just append
+                const data = await getProjects();
+                setProjects(data);
             }
         } catch (error) {
             console.error("Error creating project:", error);
@@ -91,8 +94,19 @@ export const DataProvider = ({ children }) => {
         }
     };
 
+    const reorderProjectList = async (newOrder) => {
+        // Optimistic update
+        setProjects(newOrder);
+        try {
+            await apiReorderProjects(newOrder);
+        } catch (error) {
+            console.error("Error reordering projects:", error);
+            // Revert or fetch on error? For now, we'll keep optimistic
+        }
+    };
+
     return (
-        <DataContext.Provider value={{ blogs, projects, addBlog, deleteBlog, updateBlog, addProject, deleteProject, updateProject }}>
+        <DataContext.Provider value={{ blogs, projects, addBlog, deleteBlog, updateBlog, addProject, deleteProject, updateProject, reorderProjectList }}>
             {children}
         </DataContext.Provider>
     );
