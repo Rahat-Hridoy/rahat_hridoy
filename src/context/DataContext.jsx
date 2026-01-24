@@ -95,13 +95,19 @@ export const DataProvider = ({ children }) => {
     };
 
     const reorderProjectList = async (newOrder) => {
-        // Optimistic update
-        setProjects(newOrder);
+        // Optimistic update: Update the sort_order property for each item
+        const optimisticProjects = newOrder.map((project, index) => ({
+            ...project,
+            sort_order: index
+        }));
+
+        setProjects(optimisticProjects);
+
         try {
-            await apiReorderProjects(newOrder);
+            await apiReorderProjects(optimisticProjects);
         } catch (error) {
             console.error("Error reordering projects:", error);
-            // Revert or fetch on error? For now, we'll keep optimistic
+            // Revert would be complex, but usually not needed for simple lists
         }
     };
 
