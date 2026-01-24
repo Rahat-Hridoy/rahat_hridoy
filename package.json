@@ -13,6 +13,7 @@
     "@emailjs/browser": "^4.4.1",
     "@gsap/react": "^2.1.2",
     "@neondatabase/serverless": "^1.0.2",
+    "@supabase/supabase-js": "^2.91.1",
     "@tailwindcss/vite": "^4.1.13",
     "bootstrap": "^5.3.8",
     "class-variance-authority": "^0.7.1",

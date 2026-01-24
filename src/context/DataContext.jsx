@@ -79,6 +79,10 @@ export const DataProvider = ({ children }) => {
         setBlogs(blogs.filter(blog => blog.id !== id));
     };
 
+    const updateBlog = (updatedBlog) => {
+        setBlogs(blogs.map(blog => blog.id === updatedBlog.id ? updatedBlog : blog));
+    };
+
     const addProject = (newProject) => {
         setProjects([newProject, ...projects]);
     };
@@ -87,8 +91,12 @@ export const DataProvider = ({ children }) => {
         setProjects(projects.filter(project => project.id !== id));
     };
 
+    const updateProject = (updatedProject) => {
+        setProjects(projects.map(project => project.id === updatedProject.id ? updatedProject : project));
+    };
+
     return (
-        <DataContext.Provider value={{ blogs, projects, addBlog, deleteBlog, addProject, deleteProject }}>
+        <DataContext.Provider value={{ blogs, projects, addBlog, deleteBlog, updateBlog, addProject, deleteProject, updateProject }}>
             {children}
         </DataContext.Provider>
     );

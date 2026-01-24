@@ -6,8 +6,9 @@ import ProjectList from './ProjectList';
 import ProjectGridView from './ProjectGridView';
 
 const ManageProjects = () => {
-    const { projects, addProject, deleteProject } = useData();
+    const { projects, addProject, deleteProject, updateProject } = useData();
     const [showForm, setShowForm] = useState(false);
+    const [isEditing, setIsEditing] = useState(false);
     const [formData, setFormData] = useState({
         title: '',
         text: '',
@@ -30,15 +31,36 @@ const ManageProjects = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const newProject = {
-            id: Date.now(),
-            ...formData,
-            projectTech: formData.projectTech.split(',').map(tech => tech.trim()),
-            img: formData.img || "https://placehold.co/600x400/001e2b/12f7d6?text=Project+Image" // Fallback placeholder
-        };
-        addProject(newProject);
+        
+        if (isEditing) {
+            const updatedProject = {
+                ...formData,
+                projectTech: Array.isArray(formData.projectTech) ? formData.projectTech : formData.projectTech.split(',').map(tech => tech.trim()),
+                img: formData.img || "https://placehold.co/600x400/001e2b/12f7d6?text=Project+Image"
+            };
+            updateProject(updatedProject);
+        } else {
+             const newProject = {
+                id: Date.now(),
+                ...formData,
+                projectTech: formData.projectTech.split(',').map(tech => tech.trim()),
+                img: formData.img || "https://placehold.co/600x400/001e2b/12f7d6?text=Project+Image" 
+            };
+            addProject(newProject);
+        }
+       
         setShowForm(false);
+        setIsEditing(false);
         setFormData({ title: '', text: '', img: '', projectTech: '', github: '', liveurl: '' });
+    };
+
+    const handleEdit = (project) => {
+        setFormData({
+            ...project,
+            projectTech: project.projectTech.join(', ') // Convert array back to string for input
+        });
+        setIsEditing(true);
+        setShowForm(true);
     };
 
     const handleChange = (e) => {
@@ -134,16 +156,21 @@ const ManageProjects = () => {
                     formData={formData}
                     handleChange={handleChange}
                     handleSubmit={handleSubmit}
-                    onCancel={() => setShowForm(false)}
+                    onCancel={() => {
+                        setShowForm(false);
+                        setIsEditing(false);
+                        setFormData({ title: '', text: '', img: '', projectTech: '', github: '', liveurl: '' });
+                    }}
+                    isEditing={isEditing}
                 />
             )}
 
             {/* Projects List */}
             {filteredProjects.length > 0 ? (
                 viewMode === 'list' ? (
-                     <ProjectList projects={filteredProjects} handleDelete={handleDelete} />
+                     <ProjectList projects={filteredProjects} handleDelete={handleDelete} handleEdit={handleEdit} />
                 ) : (
-                    <ProjectGridView projects={filteredProjects} handleDelete={handleDelete} />
+                    <ProjectGridView projects={filteredProjects} handleDelete={handleDelete} handleEdit={handleEdit} />
                 )
             ) : (
                 <p className="text-gray-500 font-second col-span-3 text-center py-10 bg-cardBG rounded-xl border border-white/10">No projects found matching your criteria.</p>

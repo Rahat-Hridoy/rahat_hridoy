@@ -1,9 +1,9 @@
 import React from 'react';
 
-const BlogForm = ({ formData, handleChange, handleSubmit, onCancel }) => {
+const BlogForm = ({ formData, handleChange, handleSubmit, onCancel, isEditing }) => {
     return (
         <div className="bg-cardBG p-6 rounded-2xl mb-8 border border-white/10 animate-fade-in-up">
-            <h3 className="text-xl font-bold mb-4 text-brand-1">Add New Blog Post</h3>
+            <h3 className="text-xl font-bold mb-4 text-brand-1">{isEditing ? 'Edit Blog Post' : 'Add New Blog Post'}</h3>
             <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <input
@@ -47,7 +47,7 @@ const BlogForm = ({ formData, handleChange, handleSubmit, onCancel }) => {
                 />
                  <div className="flex gap-4">
                     <button type="submit" className="w-full bg-brand-1 text-black py-3 rounded-lg font-bold hover:bg-white transition-all shadow-[0_0_15px_rgba(18,247,214,0.1)]">
-                        Publish Blog
+                        {isEditing ? 'Update Blog' : 'Publish Blog'}
                     </button>
                     {onCancel && (
                         <button type="button" onClick={onCancel} className="w-full bg-red-500/20 text-red-500 py-3 rounded-lg font-bold hover:bg-red-500 hover:text-white transition-all">
