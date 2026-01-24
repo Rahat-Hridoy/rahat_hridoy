@@ -26,7 +26,7 @@ const DashboardLayout = () => {
         <div className="flex min-h-screen bg-sectionBG text-white font-primary pt-2">
             {/* Sidebar */}
             <aside className="w-64 border-r border-white/10 fixed h-full hidden md:block">
-                <div className="p-6">
+                <div className="p-6 h-full flex flex-col">
                     <h2 className="text-2xl font-bold text-brand-1 mb-8 flex items-center gap-2">
                         <LayoutDashboard /> Dashboard
                     </h2>
@@ -56,22 +56,23 @@ const DashboardLayout = () => {
                             <Home size={20} /> Back to Home
                         </Link>
                     </nav>
-                </div>
-            </aside>
-            {/* Header with Logout - Fixed Position */}
-            <div className="fixed top-6 right-8 z-50">
-                <button
+                    {/* logout button  */}
+                    <div className='mt-auto'>
+                    <button
                     onClick={handleLogout}
-                    className="flex items-center gap-2 bg-red-500/10 hover:bg-red-500/20 text-red-500 hover:text-red-400 px-4 py-2 rounded-lg font-second transition-all border border-red-500/20 backdrop-blur-md shadow-lg"
+                    className="flex items-center gap-2  hover:bg-red-500/20 text-red-500 hover:text-red-400 px-4 py-2 rounded-lg font-second transition-all border border-red-500/20 backdrop-blur-md shadow-lg w-full"
                 >
                     <LogOut size={18} />
                     Logout
-                </button>
-            </div>
+                     </button>
+                </div>
+                </div>
+                
+            </aside>
 
             {/* Main Content */}
             <main className="flex-1 md:ml-64 p-8 relative min-h-screen">
-                <div className="mt-8">
+                <div>
                     <Routes>
                         <Route path="/" element={<ManageProjects />} />
                         <Route path="projects" element={<ManageProjects />} />
