@@ -4,6 +4,7 @@ import { Plus, X } from 'lucide-react';
 import BlogForm from './BlogForm';
 import BlogList from './BlogList';
 import BlogGridView from './BlogGridView';
+import Modal from '../../../components/common/Modal';
 
 const ManageBlogs = () => {
     const { blogs, addBlog, updateBlog, deleteBlog } = useData();
@@ -63,7 +64,17 @@ const ManageBlogs = () => {
     };
 
     const handleChange = (e) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value });
+        const { name, value, files } = e.target;
+        if (files && files.length > 0) {
+            const file = files[0];
+            const reader = new FileReader();
+            reader.onloadend = () => {
+                setFormData(prev => ({ ...prev, [name]: reader.result }));
+            };
+            reader.readAsDataURL(file);
+        } else {
+            setFormData(prev => ({ ...prev, [name]: value }));
+        }
     };
 
     // Filter and Sort Blogs
@@ -148,8 +159,16 @@ const ManageBlogs = () => {
                 </div>
             </div>
 
-            {/* Add Blog Form */}
-            {showForm && (
+            {/* Add Blog Form Modal */}
+            <Modal
+                isOpen={showForm}
+                onClose={() => {
+                    setShowForm(false);
+                    setIsEditing(false);
+                    setFormData({ title: '', image: '', tag: '', author: 'Rahat', readTime: '', description: '', content: '' });
+                }}
+                title={isEditing ? 'Edit Blog Post' : 'Add New Blog'}
+            >
                 <BlogForm
                     formData={formData}
                     handleChange={handleChange}
@@ -161,7 +180,7 @@ const ManageBlogs = () => {
                     }}
                     isEditing={isEditing}
                 />
-            )}
+            </Modal>
 
             {/* Blogs List */}
              {filteredBlogs.length > 0 ? (

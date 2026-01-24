@@ -4,6 +4,7 @@ import { Plus, X } from 'lucide-react';
 import ProjectForm from './ProjectForm';
 import ProjectList from './ProjectList';
 import ProjectGridView from './ProjectGridView';
+import Modal from '../../../components/common/Modal';
 
 const ManageProjects = () => {
     const { projects, addProject, deleteProject, updateProject } = useData();
@@ -64,7 +65,17 @@ const ManageProjects = () => {
     };
 
     const handleChange = (e) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value });
+        const { name, value, files } = e.target;
+        if (files && files.length > 0) {
+            const file = files[0];
+            const reader = new FileReader();
+            reader.onloadend = () => {
+                setFormData(prev => ({ ...prev, [name]: reader.result }));
+            };
+            reader.readAsDataURL(file);
+        } else {
+            setFormData(prev => ({ ...prev, [name]: value }));
+        }
     };
 
     // Filter and Sort Projects
@@ -150,8 +161,16 @@ const ManageProjects = () => {
                 </div>
             </div>
 
-            {/* Add Project Form */}
-            {showForm && (
+            {/* Add Project Form Modal */}
+            <Modal
+                isOpen={showForm}
+                onClose={() => {
+                    setShowForm(false);
+                    setIsEditing(false);
+                    setFormData({ title: '', text: '', img: '', projectTech: '', github: '', liveurl: '' });
+                }}
+                title={isEditing ? 'Edit Project' : 'Add New Project'}
+            >
                 <ProjectForm
                     formData={formData}
                     handleChange={handleChange}
@@ -163,7 +182,7 @@ const ManageProjects = () => {
                     }}
                     isEditing={isEditing}
                 />
-            )}
+            </Modal>
 
             {/* Projects List */}
             {filteredProjects.length > 0 ? (

@@ -1,62 +1,137 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import { UploadCloud, X } from 'lucide-react';
 
 const BlogForm = ({ formData, handleChange, handleSubmit, onCancel, isEditing }) => {
+    // Hidden file input ref
+    const fileInputRef = useRef(null);
+
+    const handleImageClick = () => {
+        fileInputRef.current.click();
+    };
+
+    const handleRemoveImage = (e) => {
+        e.stopPropagation();
+        handleChange({ target: { name: 'image', value: '' } });
+    };
+
     return (
-        <div className="bg-cardBG p-6 rounded-2xl mb-8 border border-white/10 animate-fade-in-up">
-            <h3 className="text-xl font-bold mb-4 text-brand-1">{isEditing ? 'Edit Blog Post' : 'Add New Blog Post'}</h3>
-            <form onSubmit={handleSubmit} className="space-y-4">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <input
-                        type="text" name="title" placeholder="Blog Title" required
-                        value={formData.title} onChange={handleChange}
-                        className="bg-sectionBG border border-white/10 rounded-lg p-3 text-white focus:border-brand-1 outline-none font-second"
+        <form onSubmit={handleSubmit} className="flex flex-col lg:flex-row gap-8">
+            {/* Left Side - Image Upload (Square) */}
+            <div className="w-full lg:w-[320px] flex-shrink-0 space-y-2">
+                <label className="text-sm text-gray-400 font-second ml-1">Cover Image</label>
+                <div 
+                    onClick={handleImageClick}
+                    className={`relative w-full aspect-square border-2 border-dashed rounded-2xl flex flex-col items-center justify-center cursor-pointer transition-all overflow-hidden group 
+                        ${formData.image ? 'border-brand-1/50 bg-black/40' : 'border-white/10 bg-sectionBG hover:border-brand-1/30 hover:bg-sectionBG/80'}`}
+                >
+                    <input 
+                        type="file" 
+                        ref={fileInputRef}
+                        name="image"
+                        onChange={handleChange}
+                        className="hidden"
+                        accept="image/*"
                     />
-                    <input
-                        type="text" name="image" placeholder="Image URL"
-                        value={formData.image} onChange={handleChange}
-                        className="bg-sectionBG border border-white/10 rounded-lg p-3 text-white focus:border-brand-1 outline-none font-second"
-                    />
+                    
+                    {formData.image ? (
+                        <>
+                            <img src={formData.image} alt="Preview" className="w-full h-full object-cover" />
+                             <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                <span className="text-white font-second font-medium flex items-center gap-2">
+                                    <UploadCloud size={20} /> Change
+                                </span>
+                            </div>
+                            <button 
+                                type="button"
+                                onClick={handleRemoveImage}
+                                className="absolute top-2 right-2 bg-red-500/80 text-white p-1.5 rounded-full hover:bg-red-600 transition-colors z-10"
+                            >
+                                <X size={16} />
+                            </button>
+                        </>
+                    ) : (
+                        <div className="flex flex-col items-center text-gray-400 space-y-4 px-4 text-center group-hover:text-brand-1 transition-colors">
+                            <div className="p-4 bg-white/5 rounded-full group-hover:bg-brand-1/10 transition-colors">
+                                <UploadCloud size={40} className="text-brand-1/50 group-hover:text-brand-1 transition-all duration-300" />
+                            </div>
+                            <div>
+                                <p className="font-second font-medium text-lg">Upload Image</p>
+                                <p className="text-xs text-gray-500 mt-1 leading-relaxed">Square or Landscape<br/>(max. 2MB)</p>
+                            </div>
+                        </div>
+                    )}
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            </div>
+
+            {/* Right Side - Form Fields */}
+            <div className="flex-1 space-y-5">
+                {/* Blog Title */}
+                <div className="space-y-2">
+                    <label className="text-sm text-gray-400 font-second ml-1">Blog Title</label>
                     <input
-                        type="text" name="tag" placeholder="Tag (e.g. React, AI)" required
-                        value={formData.tag} onChange={handleChange}
-                        className="bg-sectionBG border border-white/10 rounded-lg p-3 text-white focus:border-brand-1 outline-none font-second"
-                    />
-                    <input
-                        type="text" name="author" placeholder="Author"
-                        value={formData.author} onChange={handleChange}
-                        className="bg-sectionBG border border-white/10 rounded-lg p-3 text-white focus:border-brand-1 outline-none font-second"
-                    />
-                    <input
-                        type="text" name="readTime" placeholder="Read Time (e.g. 5 Min)" required
-                        value={formData.readTime} onChange={handleChange}
-                        className="bg-sectionBG border border-white/10 rounded-lg p-3 text-white focus:border-brand-1 outline-none font-second"
+                        type="text" name="title" placeholder="e.g. The Future of AI" required
+                        value={formData.title} onChange={handleChange}
+                        className="w-full bg-sectionBG border border-white/10 rounded-xl p-3.5 text-white focus:border-brand-1 focus:ring-1 focus:ring-brand-1/50 outline-none font-second transition-all placeholder:text-gray-600 text-lg"
                     />
                 </div>
 
-                <textarea
-                    name="description" placeholder="Short Description (Excerpt)" required
-                    value={formData.description} onChange={handleChange}
-                    className="bg-sectionBG border border-white/10 rounded-lg p-3 w-full h-24 text-white focus:border-brand-1 outline-none font-second resize-none"
-                />
-                <textarea
-                    name="content" placeholder="Full Blog Content" required
-                    value={formData.content} onChange={handleChange}
-                    className="bg-sectionBG border border-white/10 rounded-lg p-3 w-full h-64 text-white focus:border-brand-1 outline-none font-second resize-none"
-                />
-                 <div className="flex gap-4">
-                    <button type="submit" className="w-full bg-brand-1 text-black py-3 rounded-lg font-bold hover:bg-white transition-all shadow-[0_0_15px_rgba(18,247,214,0.1)]">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+                    <div className="space-y-2">
+                        <label className="text-sm text-gray-400 font-second ml-1">Tag</label>
+                        <input
+                            type="text" name="tag" placeholder="e.g. React, AI" required
+                            value={formData.tag} onChange={handleChange}
+                            className="w-full bg-sectionBG border border-white/10 rounded-xl p-3.5 text-white focus:border-brand-1 focus:ring-1 focus:ring-brand-1/50 outline-none font-second transition-all placeholder:text-gray-600"
+                        />
+                    </div>
+                    <div className="space-y-2">
+                        <label className="text-sm text-gray-400 font-second ml-1">Author</label>
+                        <input
+                            type="text" name="author" placeholder="Author Name"
+                            value={formData.author} onChange={handleChange}
+                            className="w-full bg-sectionBG border border-white/10 rounded-xl p-3.5 text-white focus:border-brand-1 focus:ring-1 focus:ring-brand-1/50 outline-none font-second transition-all placeholder:text-gray-600"
+                        />
+                    </div>
+                    <div className="space-y-2">
+                        <label className="text-sm text-gray-400 font-second ml-1">Read Time</label>
+                        <input
+                            type="text" name="readTime" placeholder="e.g. 5 Min" required
+                            value={formData.readTime} onChange={handleChange}
+                            className="w-full bg-sectionBG border border-white/10 rounded-xl p-3.5 text-white focus:border-brand-1 focus:ring-1 focus:ring-brand-1/50 outline-none font-second transition-all placeholder:text-gray-600"
+                        />
+                    </div>
+                </div>
+
+                <div className="space-y-2">
+                    <label className="text-sm text-gray-400 font-second ml-1">Short Description</label>
+                    <textarea
+                        name="description" placeholder="Brief summary of the article..." required
+                        value={formData.description} onChange={handleChange}
+                        className="w-full bg-sectionBG border border-white/10 rounded-xl p-3.5 h-24 text-white focus:border-brand-1 focus:ring-1 focus:ring-brand-1/50 outline-none font-second resize-none transition-all placeholder:text-gray-600"
+                    />
+                </div>
+
+                <div className="space-y-2">
+                    <label className="text-sm text-gray-400 font-second ml-1">Content</label>
+                    <textarea
+                        name="content" placeholder="Write your full blog post here..." required
+                        value={formData.content} onChange={handleChange}
+                        className="w-full bg-sectionBG border border-white/10 rounded-xl p-3.5 h-64 text-white focus:border-brand-1 focus:ring-1 focus:ring-brand-1/50 outline-none font-second resize-none transition-all placeholder:text-gray-600"
+                    />
+                </div>
+
+                <div className="pt-2 flex gap-4">
+                    <button type="submit" className="flex-1 bg-brand-1 text-black py-4 rounded-xl font-bold hover:bg-white transition-all shadow-[0_0_20px_rgba(18,247,214,0.15)] hover:shadow-[0_0_25px_rgba(18,247,214,0.3)] hover:-translate-y-0.5 active:translate-y-0">
                         {isEditing ? 'Update Blog' : 'Publish Blog'}
                     </button>
                     {onCancel && (
-                        <button type="button" onClick={onCancel} className="w-full bg-red-500/20 text-red-500 py-3 rounded-lg font-bold hover:bg-red-500 hover:text-white transition-all">
+                        <button type="button" onClick={onCancel} className="flex-1 bg-white/5 border border-white/10 text-gray-300 py-4 rounded-xl font-bold hover:bg-white/10 hover:text-white transition-all">
                             Cancel
                         </button>
                     )}
                 </div>
-            </form>
-        </div>
+            </div>
+        </form>
     );
 };
 
