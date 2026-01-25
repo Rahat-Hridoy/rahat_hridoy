@@ -2,11 +2,12 @@ import React, { useEffect } from 'react';
 import { Routes, Route, Link, useLocation, useNavigate } from 'react-router-dom';
 import ManageProjects from './ManageProjects';
 import ManageBlogs from './ManageBlogs';
-import { LayoutDashboard, PenTool, FolderPlus, Home, LogOut } from 'lucide-react';
+import { LayoutDashboard, PenTool, FolderPlus, Home, LogOut, Menu, X } from 'lucide-react';
 
 const DashboardLayout = () => {
     const location = useLocation();
     const navigate = useNavigate();
+    const [isSidebarOpen, setIsSidebarOpen] = React.useState(false);
 
     const isActive = (path) => location.pathname === path;
 
@@ -17,6 +18,11 @@ const DashboardLayout = () => {
         }
     }, [navigate]);
 
+    // Close sidebar when route changes on mobile
+    useEffect(() => {
+        setIsSidebarOpen(false);
+    }, [location]);
+
     const handleLogout = () => {
         localStorage.removeItem('isAuthenticated');
         navigate('/login');
@@ -24,12 +30,39 @@ const DashboardLayout = () => {
 
     return (
         <div className="flex min-h-screen bg-sectionBG text-white font-primary pt-2">
+            {/* Mobile Header */}
+            <div className="md:hidden fixed top-0 left-0 w-full bg-sectionBG/95 backdrop-blur-md z-50 px-4 py-3 border-b border-white/10 flex items-center justify-between">
+                <span className="text-xl font-bold text-brand-1 flex items-center gap-2">
+                    <LayoutDashboard size={20} /> Dashboard
+                </span>
+                <button onClick={() => setIsSidebarOpen(true)} className="text-white">
+                    <Menu size={24} />
+                </button>
+            </div>
+
+            {/* Sidebar Overlay */}
+            {isSidebarOpen && (
+                <div 
+                    className="fixed inset-0 bg-black/80 z-40 md:hidden"
+                    onClick={() => setIsSidebarOpen(false)}
+                />
+            )}
+
             {/* Sidebar */}
-            <aside className="w-64 border-r border-white/10 fixed h-full hidden md:block">
+            <aside className={`
+                w-64 border-r border-white/10 fixed h-full z-50 bg-sectionBG transition-transform duration-300 ease-in-out
+                ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'}
+                md:translate-x-0 md:block top-0
+            `}>
                 <div className="p-6 h-full flex flex-col">
-                    <h2 className="text-2xl font-bold text-brand-1 mb-8 flex items-center gap-2">
-                        <LayoutDashboard /> Dashboard
-                    </h2>
+                    <div className="flex justify-between items-center mb-8">
+                        <h2 className="text-2xl font-bold text-brand-1 flex items-center gap-2">
+                            <LayoutDashboard /> Dashboard
+                        </h2>
+                        <button onClick={() => setIsSidebarOpen(false)} className="md:hidden text-gray-400 hover:text-white">
+                            <X size={24} />
+                        </button>
+                    </div>
                     <nav className="space-y-4 font-second">
                         <Link
                             to="/dashboard"
@@ -71,7 +104,7 @@ const DashboardLayout = () => {
             </aside>
 
             {/* Main Content */}
-            <main className="flex-1 md:ml-64 p-8 relative min-h-screen">
+            <main className="flex-1 md:ml-64 p-4 md:p-8 relative min-h-screen mt-14 md:mt-0">
                 <div>
                     <Routes>
                         <Route path="/" element={<ManageProjects />} />

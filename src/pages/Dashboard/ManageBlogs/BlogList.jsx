@@ -5,19 +5,19 @@ const BlogList = ({ blogs, handleEdit, handleDelete }) => {
         <div className="flex flex-col gap-6">
             {blogs.length > 0 ? (
                 blogs.map((blog) => (
-                    <div key={blog.id} className="bg-cardBG p-4 rounded-xl border border-white/10 flex gap-4 items-center group relative hover:border-brand-1/30 transition-all">
-                        <div className="w-24 h-16 shrink-0 rounded-lg overflow-hidden bg-black/20">
+                    <div key={blog.id} className="bg-cardBG p-4 rounded-xl border border-white/10 flex flex-col sm:flex-row gap-4 items-start sm:items-center group relative hover:border-brand-1/30 transition-all">
+                        <div className="w-full sm:w-32 h-auto aspect-video sm:h-24 shrink-0 rounded-lg overflow-hidden bg-black/20">
                             <img src={blog.image} alt={blog.title} className="w-full h-full object-cover" />
                         </div>
-                        <div className="flex-1">
-                            <h3 className="text-lg font-bold text-white mb-1">{blog.title}</h3>
+                        <div className="flex-1 w-full">
+                            <h3 className="text-lg font-bold text-white mb-1 pr-16 sm:pr-0">{blog.title}</h3>
                             <div className="flex gap-4 text-xs text-gray-500 font-second">
                                 <span>{blog.date}</span>
                                 <span>{blog.tag}</span>
                             </div>
                         </div>
 
-                        <div className="flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                        <div className="flex items-center gap-2 absolute top-4 right-4 sm:static opacity-100 sm:opacity-0 group-hover:opacity-100 transition-opacity">
                             <button
                                 onClick={() => handleEdit(blog)}
                                 className="p-2 bg-brand-1/20 text-brand-1 rounded-lg hover:bg-brand-1 hover:text-black transition-colors"
@@ -38,7 +38,7 @@ const BlogList = ({ blogs, handleEdit, handleDelete }) => {
                             </button>
                         </div>
 
-                        <div className="flex flex-col items-end gap-2">
+                         <div className="hidden sm:flex flex-col items-end gap-2">
                              <div className="text-brand-1 font-bold font-second text-xs px-3 py-1 bg-brand-1/10 rounded uppercase">
                                 Published
                             </div>

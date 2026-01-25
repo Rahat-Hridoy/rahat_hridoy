@@ -11,12 +11,12 @@ const ProjectItem = ({ project, handleDelete, handleEdit }) => {
             id={project.id}
             dragListener={false}
             dragControls={controls}
-            className="bg-cardBG rounded-xl overflow-hidden border border-white/10 relative group flex items-center gap-4 p-4 mb-4 select-none"
+            className="bg-cardBG rounded-xl overflow-hidden border border-white/10 relative group flex flex-col sm:flex-row items-start sm:items-center gap-4 p-4 mb-4 select-none"
         >
             {/* Drag Handle */}
             <div 
                 onPointerDown={(e) => controls.start(e)}
-                className="cursor-move text-gray-500 hover:text-brand-1 touch-none"
+                className="cursor-move text-gray-500 hover:text-brand-1 touch-none absolute top-4 left-4 sm:static sm:top-auto sm:left-auto p-2 bg-black/50 rounded-lg sm:bg-transparent sm:p-0 z-20"
             >
                 <GripVertical size={20} />
             </div>
@@ -24,7 +24,7 @@ const ProjectItem = ({ project, handleDelete, handleEdit }) => {
             {/* Delete Button */}
             <button
                 onClick={() => handleDelete(project.id)}
-                className="absolute top-2 right-2 z-10 p-2 bg-red-500/20 text-red-500 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity hover:bg-red-500 hover:text-white"
+                className="absolute top-2 right-2 z-10 p-2 bg-red-500/20 text-red-500 rounded-lg opacity-100 sm:opacity-0 group-hover:opacity-100 transition-opacity hover:bg-red-500 hover:text-white"
                 title="Delete Project"
             >
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -35,7 +35,7 @@ const ProjectItem = ({ project, handleDelete, handleEdit }) => {
             {/* Edit Button */}
                 <button
                 onClick={() => handleEdit(project)}
-                className="absolute top-2 right-12 z-10 p-2 bg-brand-1/20 text-brand-1 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity hover:bg-brand-1 hover:text-black"
+                className="absolute top-2 right-12 z-10 p-2 bg-brand-1/20 text-brand-1 rounded-lg opacity-100 sm:opacity-0 group-hover:opacity-100 transition-opacity hover:bg-brand-1 hover:text-black"
                 title="Edit Project"
             >
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -43,11 +43,11 @@ const ProjectItem = ({ project, handleDelete, handleEdit }) => {
                 </svg>
             </button>
 
-            <div className="w-32 h-24 flex-shrink-0 overflow-hidden rounded-lg">
+            <div className="w-full sm:w-32 h-auto aspect-video sm:h-24 flex-shrink-0 overflow-hidden rounded-lg">
                 <img src={project.image || "https://placehold.co/600x400/001e2b/12f7d6?text=No+Image"} alt={project.title} className="w-full h-full object-cover pointer-events-none" />
             </div>
-            <div className="flex-1">
-                <h3 className="font-bold text-white mb-2 text-lg">{project.title}</h3>
+            <div className="flex-1 w-full">
+                <h3 className="font-bold text-white mb-2 text-lg pr-16 sm:pr-0">{project.title}</h3>
                 <div className="flex flex-wrap gap-2 mb-3">
                     {Array.isArray(project.tech) && project.tech.slice(0, 3).map((tech, i) => (
                         <span key={i} className="text-xs bg-white/5 px-2 py-1 rounded text-brand-1 border border-brand-1/20">{tech}</span>

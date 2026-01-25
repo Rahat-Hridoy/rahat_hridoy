@@ -96,7 +96,7 @@ const ManageProjects = () => {
                     </svg>
                 </div>
 
-                <div className="flex items-center gap-4 w-full lg:w-auto overflow-x-auto">
+                <div className="flex flex-wrap sm:flex-nowrap items-center gap-4 w-full lg:w-auto">
                     {/* Sort */}
                     <div className="flex items-center gap-2 whitespace-nowrap">
                         <span className="text-gray-400">Sort by:</span>

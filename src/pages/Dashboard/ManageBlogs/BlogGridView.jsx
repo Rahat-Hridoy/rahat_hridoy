@@ -8,7 +8,7 @@ const BlogGridView = ({ blogs, handleEdit, handleDelete }) => {
                     {/* Delete Button */}
                     <button
                         onClick={() => handleDelete(blog.id)}
-                        className="absolute top-2 right-2 z-10 p-2 bg-red-500/20 text-red-500 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity hover:bg-red-500 hover:text-white"
+                        className="absolute top-2 right-2 z-10 p-2 bg-red-500/20 text-red-500 rounded-lg opacity-100 sm:opacity-0 group-hover:opacity-100 transition-opacity hover:bg-red-500 hover:text-white"
                         title="Delete Blog"
                     >
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -19,7 +19,7 @@ const BlogGridView = ({ blogs, handleEdit, handleDelete }) => {
                     {/* Edit Button */}
                      <button
                         onClick={() => handleEdit(blog)}
-                        className="absolute top-2 right-12 z-10 p-2 bg-brand-1/20 text-brand-1 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity hover:bg-brand-1 hover:text-black"
+                        className="absolute top-2 right-12 z-10 p-2 bg-brand-1/20 text-brand-1 rounded-lg opacity-100 sm:opacity-0 group-hover:opacity-100 transition-opacity hover:bg-brand-1 hover:text-black"
                         title="Edit Blog"
                     >
                          <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">

@@ -160,7 +160,7 @@ const ProjectForm = ({ editingProject, onSuccess, onCancel }) => {
             />
         </div>
 
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="space-y-2">
                 <label className="text-sm text-gray-400">GitHub URL</label>
                 <input
