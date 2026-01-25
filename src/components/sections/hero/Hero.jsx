@@ -227,7 +227,7 @@ const Hero = () => {
                     {/* CV button */}
                     <div className="w-full flex justify-start mt-2 ">
                       <a
-                        href="/document/MD-RAHATUL-ISLAM-resume-post-web-designer.pdf"
+                        href="document/MD-RAHATUL-ISLAM-Resume.pdf"
                         target="_blank"
                         className="w-fit scale-90"
                       >

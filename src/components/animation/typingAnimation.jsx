@@ -113,7 +113,7 @@ const TypingAnimation = () => {
   };
 
   return (
-    <div className="typing-container intro-text pl-6  ">
+    <div className="typing-container intro-text pl-6 min-h-[110px] md:min-h-[220px] ">
       {lines.map(renderLine)}
     </div>
   );
