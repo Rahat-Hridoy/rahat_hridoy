@@ -2,7 +2,7 @@
 
 [ Live Link : https://rahat-hridoy.vercel.app/]
 
-![Home Page](./screenshots/home.png)
+![Home Page](/image/portfolio_rahat.png)
 
 ---
 
@@ -131,5 +131,6 @@ This project demonstrates my ability to:
 
 Visitors can contact me directly through the portfolio’s contact section. or
 
-Phone : [+880-1917-579030]
-Email : [rahathridoyd2x@gmail.com]
+Phone : +880-1917-579030
+
+Email : rahathridoyd2x@gmail.com
