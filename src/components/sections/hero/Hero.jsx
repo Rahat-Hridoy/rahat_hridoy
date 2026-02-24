@@ -159,19 +159,19 @@ const Hero = () => {
             {/* left-side: information  */}
             <div className="perspective-1000">
               {/* Full Card with Movable Border - Static (No Tilt) */}
-              <div className="lg:col-span-2 xl:col-span-1 w-[320px] h-[520px] rounded-tl-[160px] rounded-br-[160px] relative bg-transparent shadow-[0_0_30px_rgba(0,0,0,0.5)]">
+              <div className="lg:col-span-2 xl:col-span-1 w-[320px] h-fit rounded-tl-[160px] rounded-br-[160px] relative bg-transparent shadow-[0_0_30px_rgba(0,0,0,0.5)]">
                 {/* Container to clip the gradient */}
-                <div className="w-full h-full relative rounded-tl-[160px] rounded-br-[160px] overflow-hidden group">
+                <div className="w-full h-full p-[4px] relative rounded-tl-[160px] rounded-br-[160px] overflow-hidden group flex flex-col justify-center">
 
                   {/* Spinning Gradient Layer */}
                   <div className="absolute inset-[-50%] bg-[conic-gradient(from_0deg,#12f7d6,#00ccff,#ff00ff,#12f7d6)] animate-spin-slow opacity-100"></div>
 
                   {/* Content Mask (Inset to show border) */}
-                  <div className="absolute inset-[4px] bg-cardBG rounded-tl-[156px] rounded-br-[156px] flex flex-col items-center px-[22px] py-[36px] h-[calc(100%-8px)] w-[calc(100%-8px)]">
+                  <div className="relative z-10 w-full bg-cardBG rounded-tl-[156px] rounded-br-[156px] flex flex-col items-center px-[22px] py-[30px]">
                     <div>
                       {/* profile */}
                       <div>
-                        <div className="flex flex-col justify-center items-center gap-[16px]">
+                        <div className="flex flex-col justify-center items-center ">
                           <div className="relative group">
                             {/* Spinning Gradient Border */}
                             <div className="absolute -inset-[3px] rounded-full bg-[conic-gradient(from_0deg,#12f7d6,#00ccff,#ff00ff,#12f7d6)] animate-spin-slow blur-sm opacity-70"></div>
@@ -213,7 +213,7 @@ const Hero = () => {
                         </ul>
                       </div>
                       {/* skills */}
-                      <div className="flex items-center justify-start gap-3 pb-8 flex-wrap  ">
+                      {/* <div className="flex items-center justify-start gap-3 pb-8 flex-wrap  ">
                         {skills.map((skill) => (
                           <span
                             key={skill.id}
@@ -222,7 +222,7 @@ const Hero = () => {
                             {skill}
                           </span>
                         ))}
-                      </div>
+                      </div> */}
                     </div>
                     {/* CV button */}
                     <div className="w-full flex justify-start mt-2 ">
