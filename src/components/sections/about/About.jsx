@@ -23,7 +23,7 @@ const About = () => {
           >
             <div className="relative z-10 rounded-3xl overflow-hidden border-2 border-brand-1/20 shadow-2xl shadow-brand-1/10 group">
               <img
-                src="/image/rahatHridoy_about.jpg"
+                src="/image/rahatHridoy_about.webp"
                 alt="Rahat Hridoy"
                 className="w-full h-auto object-cover transition-all duration-500"
               />
@@ -31,7 +31,7 @@ const About = () => {
               {/* Overlay with Name */}
               <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/90 to-transparent p-8">
                 <h3 className="text-3xl font-primary font-bold text-white">Rahat Hridoy</h3>
-                <p className="text-brand-1 font-second">Frontend Developer</p>
+                <p className="text-brand-1 font-second">Full-Stack Developer</p>
               </div>
             </div>
 
@@ -77,22 +77,22 @@ const About = () => {
 
             <div className="bg-cardBG border border-white/5 rounded-2xl p-6 relative overflow-hidden mb-8">
               <div className="absolute top-0 left-0 w-1 h-full bg-brand-1"></div>
-              <p className="font-second text-gray-300 leading-relaxed text-lg">
+              <p className="font-second text-gray-300 leading-relaxed text-lg text-justify">
                 Hello! I'm Rahat, a passionate developer who specializes in building robust web applications. I mix creativity with technical skill to craft visually stunning and highly functional digital experiences.
               </p>
             </div>
 
             <p className="font-primary text-gray-400 leading-relaxed mb-6">
-              My journey involves mastering technologies like <span className="text-white font-medium">React, Tailwind CSS, and JavaScript</span>. I am an eternal optimist dedicated to continuous learning and pushing the boundaries of what's possible on the web.
+              My journey involves mastering technologies like <span className="text-white font-medium">Next.js, Nest.js, JavaScript and TypeScript</span>. I am an eternal optimist dedicated to continuous learning and pushing the boundaries of what's possible on the web.
             </p>
 
             <p className="font-primary text-gray-400 leading-relaxed mb-8">
-              When I'm not coding, you can find me exploring new art projects, writing blogs, or challenging my own perspectives to grow as a person and a professional.
+              When I'm not coding, you can find me exploring new creative projects, reading tech blogs, or challenging my own perspectives to grow as a person and a professional.
             </p>
 
             {/* Tech Stack Mini-List */}
             <div className="flex flex-wrap gap-3">
-              {['React', 'JavaScript', 'Tailwind', 'Motion', 'Node.js'].map((tech) => (
+              {['Next.js', 'Nest.js', 'JavaScript', 'TypeScript'].map((tech) => (
                 <span key={tech} className="px-4 py-2 bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg text-sm text-gray-300 transition-colors cursor-default">
                   {tech}
                 </span>
