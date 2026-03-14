@@ -34,8 +34,6 @@ const Hero = () => {
     },
   ];
 
-  const skills = ["Next JS", "JavaScript", "Tailwind"];
-
   const exp = [
     {
       id: 1,
@@ -49,7 +47,7 @@ const Hero = () => {
     },
     {
       id: 3,
-      digit: 2,
+      digit: "1",
       title: "Year of experiance",
     },
   ];
@@ -227,7 +225,7 @@ const Hero = () => {
                     {/* CV button */}
                     <div className="w-full flex justify-start mt-2 ">
                       <a
-                        href="document/MD-RAHATUL-ISLAM-Resume.pdf"
+                        href="document/Rahatul_Islam_Resume_Full-stack_Development.pdf"
                         target="_blank"
                         className="w-fit scale-90"
                       >

@@ -22,7 +22,7 @@ const Header = () => {
             {/* nav-list */}
             <ul className="flex items-center justify-between gap-x-[16px] md:gap-x-[32px]">
               <li className={`nav-list text-primary hover:cursor-pointer `}>
-                <Link to="/">Home</Link>
+                <Link to="#home">Home</Link>
               </li>
               <li className={`nav-list text-primary hover:cursor-pointer  `}>
                 <a href="#project">Projects</a>
