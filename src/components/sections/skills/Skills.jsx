@@ -1,6 +1,8 @@
 import React from "react";
 import SectionHead from "../../common/SectionHead";
 import { motion } from "motion/react";
+import { AiOutlineApi } from "react-icons/ai";
+import { RiShieldKeyholeLine } from "react-icons/ri";
 import {
   FaReact,
   FaCss3Alt,
@@ -8,6 +10,11 @@ import {
   FaGitAlt,
   FaNodeJs,
   FaFigma,
+  FaBootstrap,
+  FaKey,
+  FaDocker,
+  FaGithub,
+  FaLinux
 } from "react-icons/fa";
 import {
   SiJavascript,
@@ -21,6 +28,14 @@ import {
   SiPostman,
   SiVercel,
   SiNetlify,
+  SiSupabase,
+  SiNginx,
+  SiRedis,
+  SiPostgresql,
+  SiPrisma,
+  SiAuth0,
+  SiClerk,
+  SiMaildotru,
 } from "react-icons/si";
 import { TbBrandVscode, TbBrandFramer } from "react-icons/tb";
 
@@ -34,10 +49,13 @@ const skillsCategories = [
       { name: "JavaScript", icon: <SiJavascript />, color: "#F7DF1E" },
       { name: "TypeScript", icon: <SiTypescript />, color: "#3178C6" },
       { name: "Tailwind", icon: <SiTailwindcss />, color: "#06B6D4" },
+      { name: "Bootstrap", icon: <FaBootstrap />, color: "#563D7C" },
+      { name: "SCSS", icon: <FaCss3Alt />, color: "#1572B6" },
       { name: "Redux", icon: <SiRedux />, color: "#764ABC" },
       { name: "HTML5", icon: <FaHtml5 />, color: "#E34F26" },
       { name: "CSS3", icon: <FaCss3Alt />, color: "#1572B6" },
       { name: "Framer Motion", icon: <TbBrandFramer />, color: "#E32693" },
+      { name: "Shadcn UI", icon: <TbBrandFramer />, color: "#E32693" },
     ],
   },
   {
@@ -45,7 +63,15 @@ const skillsCategories = [
     description: "Handling logic & data persistence",
     skills: [
       { name: "Node.js", icon: <FaNodeJs />, color: "#339933" },
-      { name: "MongoDB", icon: <SiMongodb />, color: "#47A248" },
+      { name: "Nest.js", icon: <SiNextdotjs />, color: "#ffffff" },
+      { name: "PrismaORM" , icon: <SiPrisma />, color: "#2D3748" }, 
+      { name: "REST API", icon: <AiOutlineApi />, color: "#339933" },
+      { name: "PostgreSQL", icon: <SiPostgresql />, color: "#336791" },
+      { name: "Nginx", icon: <SiNginx />, color: "#009639" },
+      { name: "Redis" , icon: <SiRedis />, color: "#DC382D" },
+      { name: "OAuth", icon: <FaKey />, color: "#f59e0b" },
+      { name: "JWT", icon: <RiShieldKeyholeLine />, color: "#6366f1" },
+      { name: "Supabase", icon: <SiSupabase />, color: "#3ECF8E" },
       { name: "Firebase", icon: <SiFirebase />, color: "#FFCA28" },
     ],
   },
@@ -54,12 +80,18 @@ const skillsCategories = [
     description: "Workflow & Deployment",
     skills: [
       { name: "Git", icon: <FaGitAlt />, color: "#F05032" },
+      { name: "GitHub", icon: <FaGithub />, color: "#181717" },
+      { name: "Docker", icon: <FaDocker />, color: "#2496ED" },
       { name: "Vite", icon: <SiVite />, color: "#646CFF" },
-      { name: "VS Code", icon: <TbBrandVscode />, color: "#007ACC" },
       { name: "Postman", icon: <SiPostman />, color: "#FF6C37" },
       { name: "Figma", icon: <FaFigma />, color: "#F24E1E" },
       { name: "Vercel", icon: <SiVercel />, color: "#ffffff" },
       { name: "Netlify", icon: <SiNetlify />, color: "#00C7B7" },
+      { name: "VS Code", icon: <TbBrandVscode />, color: "#007ACC" },
+      { name: "Linux", icon: <FaLinux />, color: "#FCC624" },
+      { name: "Auth0", icon: <SiAuth0 />, color: "#EB5424" },
+      { name: "Clerk Auth", icon: <SiClerk />, color: "#6C47FF" },
+      { name: "EmailJS", icon: <SiMaildotru />, color: "#FF6A00" },
     ],
   },
 ];
@@ -76,7 +108,7 @@ const Skills = () => {
           text={"My technical ecosystem and tools I work with"}
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-16">
           {skillsCategories.map((category, index) => (
             <motion.div
               key={index}
