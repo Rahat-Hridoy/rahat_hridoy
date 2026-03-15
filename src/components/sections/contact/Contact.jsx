@@ -12,7 +12,7 @@ const Contact = () => {
           <ScrollMouse />
           <SectionHead
             title={"Contact"}
-            text={"I’m currently available for freelance work"}
+            text={"I’m currently available for work"}
           />
           <div>
             <div className="flex justify-center items-center">
