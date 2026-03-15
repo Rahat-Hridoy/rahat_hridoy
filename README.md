@@ -2,7 +2,7 @@
 
 [ Live Link : https://rahat-hridoy.vercel.app/]
 
-![Home Page](/image/portfolio_rahat.png)
+![Home Page](./public/image/portfolio_rahat.png)
 
 ---
 
