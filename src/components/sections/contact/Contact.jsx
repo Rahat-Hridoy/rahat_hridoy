@@ -21,7 +21,7 @@ const Contact = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
-                className="max-w-[407px] font-second font-medium text-brand-1 text-[32px] text-center leading-[42px] px-[30px] md:px-[40px]  py-[14px] md:py-[16px] border-2 border-brand-1 rounded-tl-4xl rounded-br-4xl"
+                className="max-w-[407px] font-second font-medium text-brand-1 text-2xl md:text-[32px] text-center leading-[42px] px-6 md:px-8 py-3 md:py-4 border-2 border-brand-1 rounded-tl-4xl rounded-br-4xl"
               >
                 Send me a message
               </motion.h3>
